@@ -1,19 +1,7 @@
 // Metode Lone Sørensen — opslagsværk for kursister
-// Dansk indhold. Strukturen genbruger motorens 12 navngivne eksporter,
-// men kategori-navnene oversættes til Lones univers via app.js's
-// inlinede oversettelser og via index.html.
-//
-// Mapping fra motorens TCM-slots til Lones kategorier:
-//   organs               → Ansigtszoner (overordnede zone-områder)
-//   extraordinaryMeridians → Behandlingsteknikker (greb, mønstre, sekvenser)
-//   fiveElements         → Fokusområder (hovedtemaer i hendes metode)
-//   practiceGuide        → I Praksis (klientmøde, samtale, forløb)
-//   organOverviews etc.  → Oversigter (hurtige opslag)
-//
-// VIGTIGT om kilder: Indhold i denne fil er sammensat fra Lone Sørensens
-// offentlige hjemmeside (metodelonesorensen.dk). Det er bevidst holdt på et
-// overordnet niveau. Specifikke zone-kort, NP-punkter, og protokoller hører
-// til i kursusmaterialet og bør tilføjes derfra — ikke konstrueres her.
+// Indhold: Lones artikel om regulering af det endokrine system
+// gennem Ansigtszone- og Refleksterapi.
+// Kilde: 1001 - lone.docx (modtaget fra Lone direkte).
 
 export const APP_INFO = {
   title: 'Metode Lone Sørensen',
@@ -21,23 +9,20 @@ export const APP_INFO = {
   author: 'Lone Sørensen'
 };
 
-// Motoren forventer hver intro som { paragraphs: [string, ...] }.
-// 'organs', 'meridians' osv. matcher motorens nøgler — ikke Lones overskrifter.
-// 'extraordinary' bruges af motoren til samme felt som 'meridians'.
 export const sectionIntros = {
   practice: {
     paragraphs: [
-      'Vejledning til den første samtale, hudaflæsning og opbygning af et behandlingsforløb i Sorensensistem™.'
+      'Den neuro-regulatoriske tilgang til hormonel balance — fra klientens første indtryk til det færdige behandlingsforløb.'
     ]
   },
   organs: {
     paragraphs: [
-      'Et opslag på de overordnede zone-områder i ansigtet. Detaljerede zone-kort og NP-punkter hører til i kursusmaterialet.'
+      'De endokrine kirtler vi arbejder med i Metode Lone Sørensen. Masterkirtlerne styrer kommunikationen, de perifere kirtler udfører.'
     ]
   },
   extraordinary: {
     paragraphs: [
-      'De grundteknikker og specialiserede protokoller der indgår i Sorensensistem™.'
+      'De teknikker der gør den neurologiske tilgang virksom: nervepunkter, colon-link og det lagvise arbejde.'
     ]
   },
   elements: { paragraphs: [] },
@@ -46,69 +31,98 @@ export const sectionIntros = {
 };
 
 // ============================================
-// I Praksis — klientmøde, samtale, forløb
+// I Praksis — den narrative struktur i artiklen
 // ============================================
 export const practiceGuide = [
   {
-    id: 'sorensensistem-fundament',
+    id: 'tilgangen',
     icon: '○',
-    title: 'Sorensensistem™ — fundamentet',
-    subtitle: 'Hvad metoden bygger på',
+    title: 'Den neuro-regulatoriske tilgang',
+    subtitle: 'Hvorfor systemet skal mødes som helhed',
     sections: [
       {
-        heading: 'En sammenvævning af kilder',
+        heading: 'Klienter med hormonelle ubalancer',
         paragraphs: [
-          'Sorensensistem™ er Lone Sørensens systematiserede metode, udviklet over fyrre års klinisk arbejde. Den væver flere kilder sammen: traditionel zoneterapi (fod- og hånd), kinesisk og tibetansk meridianforståelse, vietnamesisk Dien Cham-cybernetik og moderne neuroanatomi.',
-          'Metoden arbejder primært med refleksområder i ansigtet — tæt på hjernen — og bruger fod- og håndzoner som understøttelse af kredsløb og hormonfrigørelse.'
+          'Mange af de klienter, jeg ser i klinikken med hormonelle ubalancer, har allerede været igennem en lang række undersøgelser. Skjoldbruskkirtlen er tjekket. Binyrerne er målt. Og alligevel sidder de der med træthed, søvnproblemer, uregelmæssig cyklus eller en krop, der ikke reagerer, som den burde.',
+          'Det, der oftest mangler, er ikke mere information om den enkelte kirtel. Det, der mangler, er en behandling, der arbejder med systemet som helhed — med den kommunikation, der forbinder kirtlerne med hinanden og med hjernen.',
+          'Det er præcis det, den neurologiske tilgang i Ansigtszone- og Refleksterapi gør.'
         ]
       },
       {
-        heading: 'Det neurologiske princip',
+        heading: 'Ansigtet som adgang til hormonsystemet',
         paragraphs: [
-          'Det grundlæggende princip er at stimulation af specifikke refleksområder kan påvirke hjernestamme, nervesystem og hormonsystem. Behandlingen sigter på at genetablere funktionel balance — ikke at fjerne symptomer.',
-          'I metoden indgår 564 neurologiske refleksområder (NP-punkter) i ansigtet, kranielinjer, og specialiserede mikrosystemer som Colonlink™ udviklet af Lone selv.'
+          'Ansigtet er ikke et symbolsk kort over kroppen. Det er et funktionelt neuro-regulatorisk system med direkte forbindelser til hjernestammen, hypothalamus og det autonome nervesystem.',
+          'Tætheden af kranienerveender i ansigtet, kombineret med de overlappende mikrosystemer i forskellige vævslag og de rige vaskulære og lymfatiske netværk, gør ansigtet til et usædvanligt effektivt adgangsområde. Når vi stimulerer præcist her, kan vi påvirke neuro-endokrin signalering på en måde, der ikke er mulig andre steder på kroppen.',
+          'I min undervisning plejer jeg at sige det sådan: rent neurologisk er ansigtet og hænderne de mest effektive steder at arbejde. Der er en videnskabelig forklaring på det — og det er den forklaring, hele min metode er bygget på.'
         ]
       }
     ]
   },
   {
-    id: 'hudaflaesning-depotgrader',
+    id: 'to-niveauer',
     icon: '∿',
-    title: 'Hudaflæsning og depotgrader',
-    subtitle: 'At læse vævets respons',
+    title: 'To niveauer — ét samlet system',
+    subtitle: 'Central regulering og målrettet stimulering',
     sections: [
       {
-        heading: 'Hudens struktur som diagnostisk redskab',
+        heading: 'Det første niveau: central regulering',
         paragraphs: [
-          'En central kompetence i metoden er aflæsning af hudens sensitivitet og struktur. Vævet bærer information om hvor en ubalance er opstået, og hvor langt den er nået i sin udvikling.',
-          'Begrebet "depotgrader" beskriver små vævsreaktioner og blokeringer der viser sig ved palpation. De afslører ikke kun hvor symptomet sidder, men også hvilket lag i kroppens regulering der er involveret.'
+          'Hypothalamus, hypofysen og pinealkirtlen — det, jeg kalder masterkirtlerne — er systemets overordnede styringscentral. De koordinerer timing, hormonfrigivelse og kroppens reaktion på indre og ydre signaler.',
+          'Hypothalamus forbinder nervesystemet med det endokrine system og integrerer stressrespons, metabolisme og døgnrytme. Hypofysen koordinerer kommunikationen til alle perifere kirtler. Pinealkirtlen regulerer de biologiske rytmer — søvn-vågen-cyklus og hormonel timing.',
+          'I praksis er det meget sjældent, at problemet alene ligger i en enkelt perifer kirtel. Det, der oftest er galt, er, at masterkirtlerne ikke sender de rigtige signaler ned igennem systemet. Æggestokkene kan ikke fungere optimalt, hvis de ikke modtager den rette besked ovenfra. Binyrerne kan ikke regulere stressresponsen, hvis hypothalamus er i ubalance.',
+          'Derfor begynder jeg altid med masterkirtlerne — ikke i stedet for at behandle de individuelle kirtler, men som forudsætning for, at behandlingen af dem virker.'
         ]
       },
       {
-        heading: 'Fra symptom til årsag',
+        heading: 'Det andet niveau: målrettet stimulering',
         paragraphs: [
-          'Aflæsningen gør det muligt at arbejde med årsagen frem for symptomet. Den klient der kommer med tinnitus kan have et depotgrads-mønster der peger mod kæbe, nakke, eller stress-respons — og behandlingen retter sig efter dette mønster, ikke alene mod tinnitus-symptomet.'
+          'Det andet niveau er målrettet stimulering af de individuelle endokrine kirtler via specifikke reflekszoner og nervepunkter.',
+          'Skjoldbruskkirtlen og biskjoldbruskkirtlerne for stofskifte, energi og calciumbalance. Binyrerne for stressrespons og kortisolrytme. Bugspytkirtlen for glukosemetabolisme og energistabilitet. De reproduktive kirtler for hormoncyklusser og fertilitet.',
+          'Den terapeutiske effekt opstår ikke ved at arbejde med det ene eller det andet niveau isoleret, men ved at kombinere begge i én sammenhængende behandling.'
         ]
       }
     ]
   },
   {
-    id: 'behandlingsforloeb',
+    id: 'arbejdet-i-lag',
     icon: '◇',
-    title: 'Det intensive behandlingsforløb',
-    subtitle: 'Hvorfor gentagelse er central',
+    title: 'Arbejdet i lag',
+    subtitle: 'Fra det overfladiske til det dybe',
     sections: [
       {
-        heading: 'Daglig, gentagen stimulation',
+        heading: 'Stimulering der bevæger sig i lag',
         paragraphs: [
-          'Sorensensistem™ er bygget op omkring intensive forløb med daglig eller hyppig behandling. Det neurologiske respons styrkes ved gentagelse — én enkelt behandling rækker sjældent til den dybde metoden arbejder mod.',
-          'Forløbet planlægges individuelt ud fra klientens depotgrads-mønster, livsomstændigheder og behandlingsmål.'
+          'Den neurologiske tilgang i Ansigtszone- og Refleksterapi arbejder i lag, hvor stimuleringen bevæger sig fra det overfladiske til det dybe.',
+          'I det overfladiske lag aktiveres sensoriske og neurale processer. I mellemniveauet understøttes vaskulær og lymfatisk cirkulation. I det dybe lag arbejdes direkte med neuro-endokrin signalering.',
+          'Denne rækkefølge er ikke tilfældig. Det er den, der giver kroppen mulighed for at svare — og som giver behandlingen varighed frem for blot en kortvarig reaktion.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'kliniske-omraader',
+    icon: '◈',
+    title: 'Kliniske anvendelsesområder',
+    subtitle: 'Hvor metoden bruges',
+    sections: [
+      {
+        heading: 'Områder hvor tilgangen er virksom',
+        paragraphs: [
+          'Jeg bruger denne tilgang i arbejdet med klienter, der oplever:',
+          '• kronisk stress og udbrændthed',
+          '• hormonelle ubalancer relateret til skjoldbruskkirtel, binyrer eller reproduktionssystemet',
+          '• søvnforstyrrelser',
+          '• overgangsalder og hormonelle skift',
+          '• emotionel ustabilitet relateret til hormonel dysregulering',
+          '• metaboliske ubalancer.'
         ]
       },
       {
-        heading: 'Den individuelle behandlingsplan',
+        heading: 'Behandlingsforløbet',
         paragraphs: [
-          'Hver klient får sin egen plan — ikke en standardprotokol. Planen bygger på den indledende samtale, hudaflæsningen, og de zone-områder der responderer i den første sekvens. Den justeres løbende efterhånden som vævet bevæger sig.'
+          'Et effektivt behandlingsforløb følger typisk en fast rækkefølge: regulering af nervesystemet, aktivering af cirkulation og lymfesystem, efterfulgt af kombineret stimulering af masterkirtler og individuelle kirtler via nervepunkter og colon-link.',
+          'Effektiv hormonel regulering kræver mere end stimulering af enkeltorganer. Det kræver, at kommunikationen i systemet genoprettes — at masterkirtlerne sender de rigtige signaler, at de individuelle kirtler modtager dem, og at de neurologiske forbindelser imellem dem fungerer.',
+          'Ansigtszone- og Refleksterapi tilbyder en struktureret og klinisk anvendelig metode til præcis det. Ved at arbejde gennem ansigtet som neuro-regulatorisk indgang arbejder terapeuten direkte med kroppens kontrolsystemer — dér, hvor reel hormonel balance opstår.'
         ]
       }
     ]
@@ -116,127 +130,191 @@ export const practiceGuide = [
 ];
 
 // ============================================
-// Ansigtszoner — overordnede refleksområder
+// Kirtler — de endokrine kirtler artiklen handler om
+// (genbruger 'organs'-eksporten som motoren forventer)
 // ============================================
-// NB: Kun overordnede zone-områder her, ikke specifikke NP-punkter.
-// Detaljeret kortlægning hører hjemme i kursusmaterialet.
 export const organs = [
   {
-    id: 'pandezone',
-    color: '#b8952e',
-    icon: '◐',
-    name: 'Pandezone',
-    nickname: 'Frontallappen',
-    element: 'Neurologi',
-    yinYang: 'Højere hjernefunktion',
-    time: 'Frontalt',
-    partner: 'Limbisk zone',
+    id: 'hypothalamus',
+    color: '#2c3e5a',
+    icon: 'H',
+    name: 'Hypothalamus',
+    nickname: 'Masterkirtel',
+    element: 'Central regulering',
+    yinYang: 'Bro mellem nervesystem og hormonsystem',
+    time: 'Forreste hjernebund',
+    partner: 'Hypofysen',
     description: [
-      'Pandezonen forbinder til frontallappen — hjernens område for planlægning, beslutningstagning, opmærksomhed og hæmning af impulser.',
-      'I Sorensensistem™ bruges pandezonen ofte i arbejde med koncentration, kognitiv udmattelse og følelsesmæssig regulering. Områder inden for kraniellinjen kan stimulere overgang mellem hjernehalvdele.'
+      'Hypothalamus forbinder nervesystemet med det endokrine system og integrerer stressrespons, metabolisme og døgnrytme.',
+      'I Metode Lone Sørensen begynder vi altid med masterkirtlerne, fordi en perifer kirtel ikke kan fungere optimalt uden de rette signaler ovenfra. Binyrerne kan ikke regulere stressresponsen, hvis hypothalamus er i ubalance.'
     ],
     themes: [
       {
-        title: 'Indikationer',
+        title: 'Hvorfor begynde her',
         questions: [
-          'Oplever klienten manglende fokus eller mental tåge?',
-          'Er der tegn på beslutningstræthed eller kognitiv overbelastning?',
-          'Hvordan reagerer klienten på stimuli — hyperreaktiv eller flad?'
+          'Hvilke tegn ser jeg på dysreguleret stressrespons hos klienten?',
+          'Er der tegn på forstyrret døgnrytme — søvn, energi, appetit?',
+          'Er der temperaturubalance, sved, eller andre tegn på autonom ubalance?'
         ]
       },
       {
         title: 'Sammenhænge',
         questions: [
-          'Hvordan står søvnmønstret?',
-          'Er der koncentrationsskift hen over døgnet?'
+          'Hvordan står hypofyse-aksen — er der signaler om, at kommunikationen ned er forstyrret?',
+          'Er der trauma- eller stresshistorik der peger mod hypothalamus-involvering?'
         ]
       }
     ]
   },
   {
-    id: 'limbisk-zone',
-    color: '#c43c3c',
-    icon: '◑',
-    name: 'Limbisk zone',
-    nickname: 'Følelseshjernen',
-    element: 'Neurologi',
-    yinYang: 'Emotionel regulering',
-    time: 'Midt-pande',
-    partner: 'Pandezone',
+    id: 'hypofysen',
+    color: '#2c3e5a',
+    icon: 'P',
+    name: 'Hypofysen',
+    nickname: 'Masterkirtel',
+    element: 'Central regulering',
+    yinYang: 'Koordinator for perifer signalering',
+    time: 'Sella turcica',
+    partner: 'Hypothalamus',
     description: [
-      'Den limbiske zone forbinder til det limbiske system — amygdala, hippocampus og tilstødende strukturer der står for følelsesmæssig respons, hukommelse og stressregulering.',
-      'Stimulation i området bruges ofte ved trauma, angst og søvnforstyrrelser, og som led i den 8-trins neurologiske behandling i Mental Balance-arbejdet.'
+      'Hypofysen koordinerer kommunikationen til alle perifere kirtler. Den er det centrale relæ mellem hypothalamus\' instruktion og kirtlernes udførelse.',
+      'Når perifere kirtler ikke responderer på behandling som forventet, er forklaringen ofte at signalet fra hypofysen er forstyrret — ikke at kirtlen selv er problemet.'
     ],
     themes: [
       {
         title: 'Indikationer',
         questions: [
-          'Er der vedvarende uro eller hyperarousal?',
-          'Findes der traumetema i klientens historik?',
-          'Hvordan ser klientens stress-respons ud — fight, flight, freeze, fawn?'
+          'Er der tegn på flere perifere kirtler i samtidig ubalance?',
+          'Reagerer behandlingen af enkelt-kirtler ikke som forventet?'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pinealkirtlen',
+    color: '#2c3e5a',
+    icon: 'Pi',
+    name: 'Pinealkirtlen',
+    nickname: 'Masterkirtel',
+    element: 'Central regulering',
+    yinYang: 'Biologiske rytmer',
+    time: 'Bag tredje ventrikel',
+    partner: 'Hypothalamus',
+    description: [
+      'Pinealkirtlen regulerer de biologiske rytmer — søvn-vågen-cyklus og hormonel timing. Den er central når søvnen er forstyrret eller når kroppens timing er kommet ud af synk med døgnet.'
+    ],
+    themes: [
+      {
+        title: 'Indikationer',
+        questions: [
+          'Er klientens søvnrytme stabil — adstabar eller fragmenteret?',
+          'Er der jet-lag-lignende tilstande, skifteholdsarbejde, eller døgn-disorientering?'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'skjoldbruskkirtlen',
+    color: '#b8956a',
+    icon: 'T',
+    name: 'Skjoldbruskkirtlen',
+    nickname: 'Perifer kirtel',
+    element: 'Stofskifte',
+    yinYang: 'Energi og temperatur',
+    time: 'Forreste hals',
+    partner: 'Biskjoldbruskkirtlerne',
+    description: [
+      'Skjoldbruskkirtlen og biskjoldbruskkirtlerne regulerer stofskifte, energi og calciumbalance.',
+      'Mange klienter kommer med "alt er tjekket og normalt", men oplever stadig træthed, kuldeforhøjelse, vægtændring. Det peger ofte ikke på kirtlen selv, men på den centrale signalering der ikke fungerer.'
+    ],
+    themes: [
+      {
+        title: 'Indikationer',
+        questions: [
+          'Er der træthed der ikke afhjælpes af søvn?',
+          'Temperaturreguleringsproblemer? Vægtændringer uden grund?',
+          'Er der stemmeforandring, hævelse i halsen, eller synke-symptomer?'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'binyrerne',
+    color: '#b8956a',
+    icon: 'B',
+    name: 'Binyrerne',
+    nickname: 'Perifer kirtel',
+    element: 'Stressrespons',
+    yinYang: 'Kortisolrytme',
+    time: 'Over nyrerne',
+    partner: 'Hypothalamus',
+    description: [
+      'Binyrerne styrer stressresponsen og kortisolrytmen. De er ofte involveret hos klienter med kronisk stress, udbrændthed eller "wired but tired"-tilstande.',
+      'Binyrebehandling alene rækker sjældent — hypothalamus skal med, fordi det er den der instruerer.'
+    ],
+    themes: [
+      {
+        title: 'Indikationer',
+        questions: [
+          'Hvordan er energien hen over døgnet — morgentræt, eftermiddags-dyk, aften-vågen?',
+          'Er der tegn på vedvarende sympatikus-aktivering?',
+          'Er der historik med vedvarende belastning, traume, eller udbrændthed?'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'bugspytkirtlen',
+    color: '#b8956a',
+    icon: 'P',
+    name: 'Bugspytkirtlen',
+    nickname: 'Perifer kirtel',
+    element: 'Glukosemetabolisme',
+    yinYang: 'Energistabilitet',
+    time: 'Bag mavesækken',
+    partner: 'Binyrerne',
+    description: [
+      'Bugspytkirtlen regulerer glukosemetabolisme og energistabilitet. Den er ofte med i billedet hos klienter med ustabilt blodsukker, sukker-cravings og energi-svingninger.'
+    ],
+    themes: [
+      {
+        title: 'Indikationer',
+        questions: [
+          'Er der blodsukker-relaterede symptomer — humørsvingninger ved sult?',
+          'Sukker- eller carb-cravings?',
+          'Energi-svingninger der følger måltid og ikke døgn?'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'reproduktive-kirtler',
+    color: '#b8956a',
+    icon: 'R',
+    name: 'Reproduktive kirtler',
+    nickname: 'Perifer kirtel',
+    element: 'Hormoncyklus',
+    yinYang: 'Fertilitet og cyklus',
+    time: 'Bækken',
+    partner: 'Hypofysen',
+    description: [
+      'Æggestokke og testikler regulerer hormoncyklus og fertilitet. Disse kirtler kan ikke fungere optimalt, hvis de ikke modtager den rette besked ovenfra fra hypofysen.',
+      'I praksis betyder det: behandling af æggestokkene alene rækker ikke ved infertilitet eller cyklus-uregelmæssigheder. Master-kirtlernes signaler skal kunne nå frem.'
+    ],
+    themes: [
+      {
+        title: 'Indikationer',
+        questions: [
+          'Er der cyklus-uregelmæssighed, PMS, eller cyklus-baseret symptombillede?',
+          'Er der fertilitets-bekymring eller utilsigtet barnløshed?',
+          'Er klienten i overgangsalder eller hormonelt skift?'
         ]
       },
       {
         title: 'Sammenhænge',
         questions: [
-          'Hvordan står følelsesmæssig stabilitet over tid?',
-          'Er der tegn på dissociation eller emotionel afflukket­hed?'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'kraniel-midtlinje',
-    color: '#2e7a2e',
-    icon: '│',
-    name: 'Kraniel midtlinje',
-    nickname: 'Hemisfærelinjen',
-    element: 'Neurologi',
-    yinYang: 'Højre/venstre koordinering',
-    time: 'Midtsagittal',
-    partner: 'Pandezone',
-    description: [
-      'Den kraniel midtlinje arbejder med koordinering mellem højre og venstre hjernehalvdel. Den indgår i den 7. grundfase af basis-behandlingen og er central i mental balance-arbejdet.',
-      'Området relaterer til corpus callosum og strukturer der formidler mellem hemisfærerne. Stimulation kan understøtte integration efter traumer, læringsvanskeligheder og kognitiv ubalance.'
-    ],
-    themes: [
-      {
-        title: 'Indikationer',
-        questions: [
-          'Er der tegn på dyskoordinering — mellem tanke og handling, ord og krop?',
-          'Hvordan står læringskapacitet og hukommelse?'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'vagus-parasympatisk',
-    color: '#2e4a8b',
-    icon: '∿',
-    name: 'Vagus- og parasympatisk zone',
-    nickname: 'Hvilesystemet',
-    element: 'Neurologi',
-    yinYang: 'Autonom balance',
-    time: 'Lateralt',
-    partner: 'Limbisk zone',
-    description: [
-      'Vagusnerven er det parasympatiske nervesystems hovedrute — den regulerer hjerterytme, fordøjelse, åndedræt og ro-tilstand. I Sorensensistem™ stimuleres vagus via specifikke zoner i ansigt og hals.',
-      'Vagus-stimulering bruges ofte ved kronisk stress, fordøjelsesproblemer, tinnitus, og som led i tarm-hjerne-aksen sammen med Colonlink™.'
-    ],
-    themes: [
-      {
-        title: 'Indikationer',
-        questions: [
-          'Hvordan er klientens fordøjelse og hjerterytme i hvile?',
-          'Findes der tegn på vedvarende sympatikus-aktivering?',
-          'Hvordan står åndedrættet — overfladisk, holdende, dybt?'
-        ]
-      },
-      {
-        title: 'Sammenhænge',
-        questions: [
-          'Er der søvnforstyrrelser eller manglende restitution?',
-          'Tinnitus, svimmelhed, eller andre kraniale symptomer?'
+          'Hvordan står stress-niveau og søvn — hypothalamus skal være med?',
+          'Er der tegn på skjoldbruskkirtel-involvering, der også påvirker reproduktion?'
         ]
       }
     ]
@@ -244,109 +322,62 @@ export const organs = [
 ];
 
 // ============================================
-// Behandlingsteknikker
+// Teknikker — fra artiklen
+// (genbruger 'extraordinaryMeridians'-eksporten som motoren forventer)
 // ============================================
-// Genbruger meridian-shape: id, icon, name, nickname, aka,
-// openingPoint, coupledPoint, level, description, partnerMeridian, relatedOrgans
 export const extraordinaryMeridians = [
   {
-    id: 'syv-grundfaser',
-    icon: '7',
-    name: 'De syv grundfaser',
-    nickname: 'Basis-sekvensen',
-    aka: 'Sorensensistem™ basis',
-    openingPoint: 'Meridian- og nervepunktstimulation',
-    coupledPoint: 'Lymfedrænage',
-    level: 'Modul 1 — fundament',
+    id: 'nervepunkter',
+    icon: '·',
+    name: 'Nervepunkter',
+    nickname: 'Neurale forbindelser',
+    aka: 'Centralnervesystem ↔ kirtler',
+    openingPoint: 'Specifikke neurale forbindelser til de endokrine organer',
+    coupledPoint: 'Kombination beregnet ud fra hvilke strukturer der skal samarbejde',
+    level: 'Central teknik',
     description: [
-      'Den grundlæggende behandlings-sekvens i Sorensensistem™ består af syv faser, der tilsammen aktiverer kroppens regulerende systemer. Sekvensen er ens fra klient til klient i sin struktur, men intensitet og fokus tilpasses individuelt.',
-      'Faserne dækker meridian- og nervepunktstimulation, lymfeaktivering, vietnamesiske mikrosystemer for hjerne og sansestimulation, lymfedrænage, og koordinering mellem højre og venstre hjernehalvdel.'
+      'Nervepunkterne er et centralt redskab i den neurologiske del af arbejdet. De retter sig mod specifikke neurale forbindelser til de endokrine organer og styrker kommunikationen mellem centralnervesystemet og de individuelle kirtler.',
+      'Kombinationen af nervepunkter er ikke tilfældig — den er beregnet ud fra hvilke strukturer der skal samarbejde for at opnå balance i det hormon eller den kirtel, vi arbejder med.'
     ]
   },
   {
-    id: 'colonlink',
+    id: 'colon-link',
     icon: '⊙',
-    name: 'Colonlink™',
-    nickname: 'Tarm-hjerne-aksen',
-    aka: 'Lone Sørensens egen mikrosystem',
-    openingPoint: 'Refleksområder for fordøjelse',
-    coupledPoint: 'Hormonelle pulskontaktpunkter',
-    level: 'Modul 4 — hormonelt og gut-brain',
+    name: 'Colon-link',
+    nickname: 'Tarm-hjerne for hormonel balance',
+    aka: 'Tyktarmszone som indgang til hele systemet',
+    openingPoint: 'Tyktarmszonen i ansigtet',
+    coupledPoint: 'Nervepunkter til hele kroppen',
+    level: 'Fast del af hormonelle protokoller',
     description: [
-      'Colonlink™ er et mikrosystem udviklet af Lone Sørensen, der arbejder med tarm-hjerne-aksen og hormonel regulering. Det forbinder fordøjelsessystemets refleksområder med hormonelle puls-kontaktpunkter.',
-      'Anvendes ved hormonelle ubalancer, infertilitet, fordøjelsesproblemer og som led i mental balance-arbejdet — særligt hvor stress, tarm og hjernekemi er sammenvævet.'
+      'Colon-link arbejder med forbindelsen mellem fordøjelsessystemet og hormonel balance. Inde i tyktarmszonen er der ikke blot reflekspunkter til tarmens funktion — der er nervepunkter til hele kroppen.',
+      'Når vi arbejder grundigt her, stimulerer vi en generel neurologisk og holistisk respons i hele systemet. Tyktarmens funktion påvirker direkte, hvor effektivt behandlingen virker — og det er en af grundene til, at colon-link indgår som en fast del af protokollerne for hormonel regulering.'
     ]
   },
   {
-    id: 'ynsa-yamamoto',
-    icon: '⚡',
-    name: 'Yamamoto Neuro Puncture',
-    nickname: 'YNSA',
-    aka: 'Yamamoto New Scalp Acupuncture',
-    openingPoint: 'Skalp-zoner',
-    coupledPoint: 'Neurologiske basispunkter',
-    level: 'Modul 4 — avanceret neurologi',
+    id: 'lagvis-stimulation',
+    icon: '≡',
+    name: 'Det lagvise arbejde',
+    nickname: 'Overflade → mellem → dyb',
+    aka: 'Stimuleringsrækkefølgen',
+    openingPoint: 'Sensoriske og neurale processer i overflade-laget',
+    coupledPoint: 'Direkte neuro-endokrin signalering i det dybe lag',
+    level: 'Grundprincip',
     description: [
-      'YNSA er en japansk skalp-akupunktur-metode udviklet af Toshikatsu Yamamoto. I Sorensensistem™ integreres den i avanceret neurologisk behandling — særligt ved facialisparese, talevanskeligheder, synkebesvær og andre kranienerve-relaterede tilstande.',
-      'Metoden bruger specifikke zoner på skalpen der korresponderer til motoriske og sensoriske områder i hjernen.'
-    ]
-  },
-  {
-    id: 'castillo-muskelstimulation',
-    icon: '◢',
-    name: 'Dr. Castillos muskelstimulation',
-    nickname: 'Cubansk neuro-muskulær',
-    aka: 'Muskelreflektorisk protokol',
-    openingPoint: 'Muskelfæste-punkter',
-    coupledPoint: 'Neurologisk relé',
-    level: 'Avanceret',
-    description: [
-      'En protokol fra Dr. Castillos arbejde i Cuba, integreret i metodens avancerede arbejde. Bruges ved akutte skader, muskulære lammelser og neurologiske tilstande hvor motorisk respons er kompromitteret.'
-    ]
-  },
-  {
-    id: 'plexus-balancering',
-    icon: '✦',
-    name: 'Plexus-balancering',
-    nickname: 'Emotionel regulering',
-    aka: 'Solar plexus og diafragma',
-    openingPoint: 'Plexus solaris-zone',
-    coupledPoint: 'Diafragma-zone',
-    level: 'Grundteknik',
-    description: [
-      'Plexus-balancering arbejder med solar plexus-området og diafragma. Anvendes ved emotionel ustabilitet, angst, og som forberedelse til dybere arbejde med limbiske strukturer.',
-      'Indgår ofte som "stille fase" mellem mere stimulerende sekvenser — for at lade klientens system integrere det der er igangsat.'
-    ]
-  },
-  {
-    id: 'kranielinjer',
-    icon: '═',
-    name: 'Kranielinjer og kraniepunkter',
-    nickname: 'Linjearbejdet',
-    aka: 'Kraniel mapping',
-    openingPoint: 'Sagittale linjer',
-    coupledPoint: 'Lateral koronallinjer',
-    level: 'Grundteknik',
-    description: [
-      'Kranielinjerne er specifikke linjer i ansigt og kranie der tilsammen udgør et netværk af stimulationsveje. Hver linje har sit fokus — nogle adresserer hjernehalvdels-koordinering, andre forbindelser til kranienerver eller hormonale strukturer.',
-      'Linjerne arbejdes ofte i sekvens — fra grov til fin — og kombineres med punktstimulation på specifikke koordinater langs linjen.'
+      'Stimuleringen bevæger sig fra det overfladiske til det dybe. I det overfladiske lag aktiveres sensoriske og neurale processer. I mellemniveauet understøttes vaskulær og lymfatisk cirkulation. I det dybe lag arbejdes direkte med neuro-endokrin signalering.',
+      'Rækkefølgen er ikke tilfældig. Det er den der giver kroppen mulighed for at svare — og som giver behandlingen varighed frem for blot en kortvarig reaktion.'
     ]
   }
 ];
 
 // ============================================
-// Fokusområder — udfyldes fra kursusmateriale senere.
+// Tomme felter — motoren forventer dem som tomme arrays/objekter
 // ============================================
 export const fiveElements = [];
-
-// ============================================
-// Oversigter — udfyldes senere.
-// ============================================
 export const organOverviews = [];
 export const meridianOverviews = [];
 export const symptomReference = [];
 export const patternLibrary = [];
-// Stubs der opfylder motorens shape-krav. Skjules på UI-niveau senere.
 export const conversationStructure = {
   title: '',
   subtitle: '',

@@ -17,7 +17,7 @@ import {
   conversationStructure,
   organClock,
   tcmFoundation
-} from './data-lone.js?v=2';
+} from './data-lone.js?v=3-endokrin';
 
 const da = {
   APP_INFO,
