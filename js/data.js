@@ -17,7 +17,7 @@ import {
   conversationStructure,
   organClock,
   tcmFoundation
-} from './data-lone.js?v=5-monster';
+} from './data-lone.js?v=6-articles';
 
 const da = {
   APP_INFO,

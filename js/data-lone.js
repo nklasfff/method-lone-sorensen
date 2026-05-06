@@ -275,6 +275,135 @@ export const practiceGuide = [
     ]
   },
   {
+    id: 'organkort-reguleringssystemer',
+    icon: '◇',
+    title: 'Fra organkort til reguleringssystemer',
+    subtitle: 'En faglig udvidelse af zoneterapiens forståelsesramme',
+    sections: [
+      {
+        heading: 'Den klassiske zoneterapi som fundament',
+        paragraphs: [
+          'Zoneterapi har i mere end hundrede år arbejdet med kort, hvor organer og kropsstrukturer afspejles på fødder, hænder og ansigt. Gennem generationer har behandlere anvendt disse korrespondancekort til at understøtte cirkulation, afspænding og systemisk balance.',
+          'Den klassiske zoneterapi har opbygget et solidt og respekteret fundament. Dette fundament skal anerkendes.',
+          'Men vores forståelse af kroppens regulering har udviklet sig. Moderne viden om det autonome nervesystem, stressfysiologi, immunologisk kommunikation, vaskulær regulering og aktiv knoglemarvsfunktion viser, at organer ikke fungerer isoleret. De indgår i komplekse reguleringsnetværk, hvor neurologiske og kemiske processer er tæt forbundne.'
+        ]
+      },
+      {
+        heading: 'Fra kort til mekanismer',
+        paragraphs: [
+          'Traditionelle reflekskort er anatomisk baserede. Et område svarer til et organ. Når området stimuleres, sigtes der mod at understøtte organets funktion.',
+          'Tag nyrerne som eksempel. I klassisk zoneterapi stimuleres nyrezonen for at understøtte udskillelse, blodfiltration, blodtryksregulering, mineralbalance og produktion af røde blodlegemer. Fokus er organet.',
+          'Men nyrernes funktion afhænger af autonom balance, blodforsyning, stresspåvirkning, hormonel regulering og knoglemarvens aktivitet.',
+          'I en reguleringsbaseret tilgang ændres perspektivet. I stedet for at stimulere nyrezonen isoleret, kan arbejdet begynde med områder relateret til autonom stabilisering, vaskulær dynamik og de kredsløb der regulerer blod- og stressrespons. Først derefter adresseres nyrezonen — i en mere stabil intern reguleringstilstand.',
+          'Intentionen er ikke at behandle nyren direkte. Intentionen er at påvirke de reguleringsnetværk der bestemmer hvordan nyren fungerer. Fokus flyttes opstrøms — mod de systemer der former symptomudtryk.'
+        ]
+      },
+      {
+        heading: 'Berøring i flere lag',
+        paragraphs: [
+          'Refleksstimulation engagerer mere end et enkelt punkt. Huden og det underliggende væv indeholder forskellige typer sensoriske receptorer, herunder mekanoreceptorer, termoreceptorer og nociceptorer. Disse findes i forskellige vævslag — i huden, i fascien, i bindevævet og i periostale strukturer.',
+          'Stimulation i forskellige dybder genererer derfor forskellige former for sensorisk input. Overfladisk stimulation kan påvirke autonom tonus, mens dybere, struktureret tryk kan engagere fasciale og periostale receptorer med forbindelse til bredere reguleringskredsløb.',
+          'Berøring bliver dermed lagdelt kommunikation.'
+        ]
+      },
+      {
+        heading: 'En struktureret udvidelse',
+        paragraphs: [
+          'Gennem årtiers klinisk arbejde og international undervisning er Neuro-Marrow Reflex Regulation Model udviklet som en struktureret udvidelse af klassisk zoneterapi.',
+          'Modellen integrerer nye kortlagte refleksområder relateret til autonom regulering og aktiv knoglemarvsfysiologi. Den arbejder med terapeutisk sekventering, hvor systemisk regulering prioriteres før organspecifik stimulation.',
+          'Der arbejdes ikke kun med symptomet, men med det reguleringsmiljø hvor symptomet opstår.',
+          'Den klassiske zoneterapi forbliver fundamentet. Kortene forbliver. Hænderne forbliver. Det der udvides, er forståelsen af hvordan struktureret refleksstimulation kan påvirke autonom balance, immunologisk koordinering og systemisk robusthed. Adgangen er fortsat via fødder, hænder og ansigt — horisonten er blot blevet bredere.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'fire-indgange',
+    icon: '✦',
+    title: 'Ansigt · Hånd · Fod · Øre — ét nervesystem',
+    subtitle: 'Ansigtets rolle i den samlede reguleringsstrategi',
+    sections: [
+      {
+        heading: 'Systemisk resiliens som terapeutisk mål',
+        paragraphs: [
+          'I moderne terapi taler vi ofte om symptomer. Om hvad der gør ondt, og hvad der ikke fungerer. For mig har sundhed altid handlet om noget mere grundlæggende. Om hvorvidt kroppen er i stand til at regulere sig selv.',
+          'Kan den tilpasse sig belastning? Kan den finde tilbage i balance efter sygdom? Kan den bevare en stabil funktion over tid? Den evne kalder vi systemisk resiliens.',
+          'I Neuro-Refleksterapi arbejder jeg ikke med kraftig stimulation eller med at forsøge at korrigere kroppen udefra. Jeg arbejder med nervesystemets evne til at kommunikere og koordinere. Når denne kommunikation forbedres, begynder kroppen som helhed at regulere sig anderledes — mere præcist og ofte mere stabilt.'
+        ]
+      },
+      {
+        heading: 'Ansigtet i sammenhæng med de andre indgange',
+        paragraphs: [
+          'Ansigt, hænder, fødder og ører er ikke adskilte behandlingsområder. De er forskellige sensoriske indgange til det samme nervesystem. Når de anvendes bevidst og i sammenhæng, understøtter de en form for helhedsregulering, som ikke kan opnås gennem én indgang alene.',
+          'Hver indgang bidrager med sin egen kvalitet:',
+          '• Ansigtet giver hurtig og præcis central regulering',
+          '• Hænderne understøtter integration og rytme',
+          '• Fødderne giver dybde, forankring og stabilitet',
+          '• Øret giver direkte adgang til det autonome nervesystem'
+        ]
+      },
+      {
+        heading: 'Ansigtsrefleksterapis særlige rolle',
+        paragraphs: [
+          'Ansigtet har en meget høj tæthed af sensoriske receptorer og en direkte forbindelse til kranienerver og hjernestamme. Refleksbuerne er korte, og det giver mulighed for hurtig og præcis neural påvirkning.',
+          'Ansigtsrefleksterapi anvendes ofte ved behov for autonom regulering, mental og emotionel balance samt central koordinering i hjernen. Den egner sig især til finregulering og situationer hvor nervesystemet har brug for hurtig stabilisering.'
+        ]
+      },
+      {
+        heading: 'Fra refleksinput til systemisk resiliens',
+        paragraphs: [
+          'Reguleringen kan ses som en sammenhængende proces. Sensorisk input fra ansigt, hænder, fødder og ører integreres i central- og autonomnervesystemet. Herfra koordineres responsen videre til immunsystemet, hormonsystemet, kredsløbet og lymfen.',
+          'Denne regulering påvirker i sidste ende cellernes energiproduktion, reparationsprocesser og inflammatoriske balance. Systemisk resiliens viser sig på celleniveau, men styres via nervesystemet.',
+          'Når flere refleksindgange kombineres, reduceres behovet for kraftig stimulation. Nervesystemet modtager mere nuanceret information, og reguleringen bliver ofte mere stabil over tid. I praksis betyder det mindre belastning, større præcision og bedre langsigtet tilpasning.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'stamcelleterapi-stoette',
+    icon: '◈',
+    title: 'Neuro-Refleks Terapi som støtte til regeneration',
+    subtitle: 'Forbindelsen til kroppens egen helingskraft',
+    sections: [
+      {
+        heading: 'To metoder mødes i ét fælles mål',
+        paragraphs: [
+          'Når vi taler om stamcelleterapi og Neuro-Refleks Terapi, bevæger vi os på to forskellige niveauer i kroppen. Stamcelleterapi arbejder direkte på celleniveau, mens vores refleksmetoder påvirker nervesystemet og hjernens reguleringscentre.',
+          'Selvom tilgangen er forskellig, mødes de to metoder i et fælles mål: at aktivere og styrke kroppens egen evne til at reparere sig selv. Det er netop denne kombination — det biologiske og det neurologiske — som kan skabe et stærkere fundament for heling.'
+        ]
+      },
+      {
+        heading: 'Nervesystemet som "tænd/sluk"-mekanisme for regeneration',
+        paragraphs: [
+          'Regeneration handler aldrig kun om stamcellerne selv. Det handler om hele det miljø de arbejder i: blodgennemstrømning, hormoner, signalstoffer og de impulser hjernen sender ud i kroppen.',
+          'Når vi påvirker hjernens reguleringscentre gennem præcis refleksstimulation — særligt områder i hypothalamus, hypofysen og det autonome nervesystem — ændrer vi kroppens indre tone. Det kan dæmpe inflammation, forbedre cirkulationen og stimulere udskillelsen af vækstfaktorer som GH og IGF-1.',
+          'Når dette sker, får stamcellerne et mere gunstigt miljø at arbejde i. Refleksstimulering "åbner døren", så kroppen bedre kan bruge de ressourcer den får tilført.'
+        ]
+      },
+      {
+        heading: 'Stressregulering som forudsætning for heling',
+        paragraphs: [
+          'Stamceller er ekstremt følsomme over for stresshormoner som kortisol. Et nervesystem der konstant står i alarmberedskab, hæmmer stamcellernes aktivitet — og dermed helingen.',
+          'Når vi arbejder med vagusnerven, binyrerne og de emotionelle zoner, hjælper vi kroppen tilbage til et parasympatisk, reparerende udgangspunkt. Det giver en indre ro, hvor immunfunktion, hormonbalance og vævsregeneration kan arbejde mere effektivt.'
+        ]
+      },
+      {
+        heading: 'Cirkulation og vævsmiljø',
+        paragraphs: [
+          'Selv de mest avancerede stamceller har brug for ilt, næring og et stabilt vævsmiljø for at kunne overleve og integreres. Refleksstimulering i ansigt, fødder og hænder forbedrer cirkulation og mikrogennemstrømning, så vævet bliver mere vitalt og modtageligt.',
+          'For mange klienter gør denne ændring en større forskel end selve stamcellebehandlingen, fordi kroppen bedre kan "tage imod" stamcellerne og bruge dem dér hvor der er behov.'
+        ]
+      },
+      {
+        heading: 'Refleksstimulering som biologisk forstærkning',
+        paragraphs: [
+          'Selv uden stamcellebehandling kan refleksstimulering aktivere kroppens egne stamceller. Forskning viser, at mekanisk påvirkning — tryk, stræk, vibrationer eller lys — kan stimulere frigivelsen af mesenkymale stamceller lokalt i vævet.',
+          'Det betyder, at metoden fungerer som en biologisk trigger der fremmer naturlig cellefornyelse i hud, muskler, nerver og organer. Når dette kombineres med ekstern stamcelleterapi, kan kroppen arbejde mere intelligent og målrettet med de ressourcer den får.'
+        ]
+      }
+    ]
+  },
+  {
     id: 'rynker',
     icon: '◐',
     title: 'Rynker — når ansigtet begynder at tale',
