@@ -998,6 +998,91 @@ p {
   background: var(--border-medium);
 }
 
+/* === Track Overview — Overblik / 8 Temaer / Nøglepunkter === */
+.track-overview-header .detail-title-area {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.track-overview-header .detail-title-area h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.track-overview-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.track-overview-lede {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+  max-width: 56ch;
+}
+
+.track-ov-section {
+  padding: 22px 0 4px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.track-ov-section:last-child {
+  border-bottom: none;
+}
+
+.track-ov-heading {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.track-ov-paragraph {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 0 14px;
+}
+
+.track-ov-paragraph:last-child {
+  margin-bottom: 18px;
+}
+
+/* Subtitle på et tema (vises under titlen i akkordeon-headeren) */
+.theme-subtitle {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 3px;
+  letter-spacing: 0;
+}
+
+/* Lead-paragraph i tema-body (over spørgsmålene) */
+.theme-lead {
+  padding: 0 16px 4px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 12px 0 4px;
+}
+
+/* Større max-height så lead + 4 spørgsmål kan vises uden klipning */
+#track-overview-themes .theme-item.open .theme-body {
+  max-height: 900px;
+}
+
 /* === Skjul TCM-rest visuelt === */
 .organ-clock,
 .clock-segment,

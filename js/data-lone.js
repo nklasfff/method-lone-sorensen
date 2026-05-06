@@ -908,6 +908,207 @@ export const patternLibrary = [
 ];
 
 // ============================================
+// Overblik for kursisten — opslag mellem klienterne.
+//
+// Ikke en præsentation af uddannelsen. Et arbejdsredskab for dig der
+// allerede har metoden i hænderne og bruger den i klinikken.
+//
+// Tre faner, samme logik som i det tidligere TCM-projekt:
+//   Overblik     — metodens kort, til at orientere dig før et møde
+//   8 Temaer     — refleksionsspor du kan stille dig selv undervejs
+//   Nøglepunkter — anker-begreber til hurtigt opslag
+//
+// Mønster-analysen er det centrale værktøj — denne side er det
+// arbejdsrum analysen står i.
+// ============================================
+export const educationOverview = {
+  title: 'Ansigtszone- og Refleksterapi',
+  eyebrow: 'Dit arbejdsrum',
+  lede: 'Et opslag mellem klienterne. Brug Mønster-analysen til at læse et symptombillede — og hold metodens logik ved hånden her.',
+  // ----- Overblik-fanen — orientering før klienten kommer ind -----
+  overview: [
+    {
+      heading: 'Metodens kerne',
+      paragraphs: [
+        'Du arbejder med årsagen, ikke symptomet. Hvert symptombillede skal læses som et udtryk for et reguleringsmiljø — autonom tonus, vaskulær dynamik, hormonel signalering, immun- og neuroaktivitet — der er ude af balance.',
+        'Mønster-analysen hjælper dig med at læse hvor i netværket vægten ligger. Resten af metoden — basebehandlingen, NP-punkterne, Colonlink, YNSA, kraniale linjer, plexus-balancering, Castillos muskelstimulering — er de håndværkere du sender ind, når du har set mønsteret.'
+      ]
+    },
+    {
+      heading: 'Hvor begynder du?',
+      paragraphs: [
+        'Ikke ved symptomet. Ved reguleringsmiljøet.',
+        'Sympatisk aktivering bremser perifer respons. Et stresset system kan ikke integrere det specifikke. Begynd med basebehandlingen og den autonome stabilisering — derefter vaskulært og metabolisk — først så det organrelaterede.',
+        'Det er ikke en regel for hver session, men det er den rækkefølge du falder tilbage til når du er i tvivl.'
+      ]
+    },
+    {
+      heading: 'Det centrale før det perifere',
+      paragraphs: [
+        'En perifer kirtel kan ikke fungere optimalt uden de rette signaler ovenfra. Hvis behandlingen af enkelt-kirtler ikke svarer som forventet, er den centrale signalering forstyrret — ikke kirtlen selv.',
+        'Læs flere perifere ubalancer som ét billede: hypothalamus-hypofyse-aksen er ofte med, før du arbejder lokalt med skjoldbruskkirtel, binyrer, bugspytkirtel eller reproduktive kirtler.'
+      ]
+    },
+    {
+      heading: 'Lagene under fingrene',
+      paragraphs: [
+        'Hud, bindevæv, muskler og periost reagerer hver for sig. Tryk, rytme, dybde og bevægelse er ikke detaljer — det er det signal kroppen rent faktisk modtager.',
+        'Langsom og rytmisk understøtter parasympatisk respons. Statisk og præcist skaber fokuseret neurologisk stimulering. Dynamisk arbejder med cirkulation og vævets bevægelighed. Du tilpasser løbende — det er det der gør behandlingen lagvis frem for ensartet.'
+      ]
+    },
+    {
+      heading: 'Fire indgange, ét nervesystem',
+      paragraphs: [
+        'Ansigt, hånd, fod og øre er ikke alternativer. De er forskellige sensoriske indgange til det samme nervesystem.',
+        'Ansigtet → hurtig og præcis central regulering. Hænderne → integration og rytme. Fødderne → dybde og forankring. Øret → direkte adgang til vagus og det autonome nervesystem.',
+        'Hvilken indgang giver den respons klienten har brug for nu?'
+      ]
+    },
+    {
+      heading: 'Når mønsteret flytter sig',
+      paragraphs: [
+        'Helingsreaktioner er sjældent et tegn på at noget er galt. Træthed, ømhed, kortvarig forværring eller emotionelle udsving viser at kroppen er begyndt at arbejde igen.',
+        'Hold rækkefølgen rolig, sæt tempoet ned, bed klienten drikke vand. Hvis reaktionen rækker ud over få dage eller bliver voldsom, justér intensitet eller rækkefølge i næste session.'
+      ]
+    }
+  ],
+  // ----- 8 Temaer-fanen — kliniske refleksionsspor -----
+  themes: [
+    {
+      title: 'Berøringens kvalitet',
+      subtitle: 'Tryk, rytme, dybde, bevægelse',
+      lead: 'Det er ikke kun hvor du berører — det er hvordan. Forskellige lag reagerer på forskellige signaler.',
+      questions: [
+        'Hvilket lag arbejder jeg i lige nu — hud, bindevæv, muskel, eller dybere?',
+        'Hvilken receptortype prøver jeg at nå — overfladisk regulering eller dybere neurologisk stimulation?',
+        'Er rytmen langsom og parasympatisk understøttende, eller fokuseret og præcis?',
+        'Tilpasser jeg trykket undervejs, eller kører jeg det samme niveau gennem hele behandlingen?'
+      ]
+    },
+    {
+      title: 'Reguleringsprioritering',
+      subtitle: 'Rækkefølgen før symptomet',
+      lead: 'Et symptom er sjældent isoleret. Det opstår i et reguleringsmiljø — og det miljø skal stabiliseres først.',
+      questions: [
+        'Hvad er klientens autonome tonus lige nu — kan systemet overhovedet integrere stimulation?',
+        'Begynder jeg ved symptomet, eller går jeg opstrøms til den centrale regulering først?',
+        'Er der vaskulær eller metabolisk ustabilitet der skal støttes før den organspecifikke stimulation?',
+        'Er rækkefølgen i min sekvens drevet af klientens system — eller af min egen hastighed?'
+      ]
+    },
+    {
+      title: 'Det autonome nervesystem',
+      subtitle: 'Sympatikus, parasympatikus, vagal tonus',
+      lead: 'Enhver behandling der skal skabe varig ændring må arbejde med det autonome nervesystem.',
+      questions: [
+        'Står klienten i vedvarende sympatisk aktivering — eller er der dorsal nedlukning under?',
+        'Hvor er klienten på sin egen stige af tilstande — kan vi mærke det i åndedræt, hud, blik, stemme?',
+        'Hvilke områder relateret til den retikulære formation, limbiske kredsløb og vagale kerner er relevante her?',
+        'Reagerer kroppen med ro under behandlingen — eller med forvirring og spænding?'
+      ]
+    },
+    {
+      title: 'Vagus og hjerne-tarm-aksen',
+      subtitle: 'Den centrale regulator',
+      lead: 'Over 80% af vagusnervens fibre sender information fra tarm til hjerne. Tarmens tilstand former følelsesmæssig og mental balance.',
+      questions: [
+        'Er der tegn på svækket vagal tonus — fordøjelsesproblemer, arytmi, angst, kronisk inflammation?',
+        'Hvor meget af klientens billede peger på tarm-hjerne-aksen frem for et lokalt organproblem?',
+        'Skal Colonlink ind i protokollen, eller stabiliserer jeg via aurikulær eller fodbaseret vagus-kontakt?',
+        'Har jeg lagt en basisbehandling først, så systemet kan modtage den specifikke stimulation?'
+      ]
+    },
+    {
+      title: 'Ansigtet som diagnostisk felt',
+      subtitle: 'Visuel observation, hudaflæsning, depotgrader',
+      lead: 'Rynker, linjer, farveforandringer og hudens struktur er information om belastning og regulering — ikke kosmetik.',
+      questions: [
+        'Hvilke gentagende mønstre ser jeg i ansigtet — fysiologisk, emotionel eller dybere neurologisk belastning?',
+        'Hvilke depotgrader møder vævet med under behandlingen?',
+        'Hvad fortæller asymmetri, tonus, farve og temperatur mig om hvor processen er nået til?',
+        'Anvender jeg det visuelle som støtte til valg af refleksområde — eller forsøger jeg at korrigere et enkelt tegn?'
+      ]
+    },
+    {
+      title: 'Helingsreaktioner',
+      subtitle: 'Træthed, ømhed, frigørelse — kroppens omstillingsproces',
+      lead: 'Midlertidig forværring er sjældent et tegn på, at noget er galt. Det er ofte et signal om, at kroppen begynder at arbejde igen.',
+      questions: [
+        'Hvad mærker klienten i timerne og dagene efter behandlingen — og forstår vi det sammen?',
+        'Er forværringen indenfor det forventelige (timer til få dage) — eller skal jeg justere intensitet eller rækkefølge?',
+        'Får klienten den væske, søvn og ro reaktionen kalder på?',
+        'Bruger jeg helingsreaktionerne som klinisk information om hvor processen står?'
+      ]
+    },
+    {
+      title: 'Hormonelle netværk',
+      subtitle: 'Masterkirtler først, perifert symptom dernæst',
+      lead: 'En perifer kirtel kan ikke fungere optimalt uden de rette signaler ovenfra. Det centrale kommer før det perifere.',
+      questions: [
+        'Er der flere perifere ubalancer på én gang — peger det på hypothalamus-hypofyse-aksen?',
+        'Reagerer behandlingen af en enkelt kirtel ikke som forventet — er den centrale signalering forstyrret?',
+        'Hvor er stress, søvn og døgnrytme i klientens billede — er pinealkirtlen og binyrerne med?',
+        'Hvordan står tarm-hjerne-aksen i forhold til de hormonelle symptomer?'
+      ]
+    },
+    {
+      title: 'Mikrosystemer i sammenhæng',
+      subtitle: 'Ansigt · hånd · fod · øre — ét nervesystem',
+      lead: 'De fire indgange er ikke alternativer. De er forskellige sensoriske porte til samme reguleringsnetværk.',
+      questions: [
+        'Hvilken indgang giver den respons klienten har brug for lige nu — central regulering, dybde, integration eller autonom kontakt?',
+        'Skal flere indgange kombineres i forløbet — eller hører dette møde kun til én port?',
+        'Bruger jeg ansigtet til finregulering og fødder til forankring — eller blander jeg uden klar intention?',
+        'Hvordan ser sekvensen ud over flere behandlinger, så systemet får tid til at integrere?'
+      ]
+    }
+  ],
+  // ----- Nøglepunkter-fanen — anker-begreber -----
+  keyPoints: [
+    {
+      title: '564 NP-punkter',
+      text: 'Neurologiske refleksområder kortlagt i ansigtet, baseret på vietnamesisk forskning. Anvendes ved smerter, neurologiske ubalancer og som selvbehandling klienten kan udføre derhjemme. Kombinationen af punkter er ikke tilfældig — den er beregnet ud fra hvilke strukturer der skal samarbejde.'
+    },
+    {
+      title: '7 grundfaser',
+      text: 'Den fulde 7-trins basebehandling er fundamentet for al ansigtsrefleksterapi. Den skaber balance i kredsløb, meridianer, lymfe og centralnervesystem. Læres i modul 1 og indgår som indledende sekvens i alt efterfølgende arbejde.'
+    },
+    {
+      title: 'Colonlink',
+      text: 'Lones eget mikrosystem for tarm-hjerne-aksen og hormonel regulering. Inde i tyktarmszonen findes ikke kun reflekspunkter for tarmens funktion, men nervepunkter til hele kroppen. Indgår som fast del af de hormonelle protokoller i modul 4.'
+    },
+    {
+      title: 'Depotgrader',
+      text: 'Vævsreaktioner der afslører hvor og hvor langt en ubalance er nået. Vævets respons aflæses lag for lag og bruges til at opbygge den individuelle behandlingsprotokol og følge ændringer over tid.'
+    },
+    {
+      title: '4 mikrosystemer',
+      text: 'Ansigt, hånd, fod og øre — fire sensoriske indgange til samme nervesystem. Ansigtet giver central regulering, hænder integration, fødder dybde og øret direkte autonom kontakt. Anvendes i sammenhæng frem for hver for sig.'
+    },
+    {
+      title: 'Reguleringsprioritering',
+      text: 'Behandlingen organiseres i en sekvens hvor autonom balance vurderes og stabiliseres først, vaskulær og metabolisk regulering understøttes, og organrelaterede refleksområder først derefter stimuleres. Strukturen reducerer overbelastning og øger systemets evne til at integrere.'
+    },
+    {
+      title: 'YNSA — Yamamoto skalp-akupunktur',
+      text: 'Japansk skalp-akupunktur-metode integreret i metodens avancerede arbejde. Anvendes ved kroniske sygdomme samt syns- og hørefunktioner via specifikke skalpzoner med korrespondance til motoriske og sensoriske områder i hjernen. Indgår i modul 4.'
+    },
+    {
+      title: 'Castillos muskelstimulering',
+      text: 'Cubansk neuro-muskulær protokol fra Dr. Castillo. Anvendes ved ansigtslammelse, tygge-, synke- og taleforstyrrelser samt muskelsvaghed efter skader. Læres i modul 3.'
+    },
+    {
+      title: 'Kraniale linjer og punkter',
+      text: 'Specifikke linjer i ansigt og kranie der tilsammen udgør et netværk af stimulationsveje til stabilisering af hjernefunktioner og koordinering mellem hjernehalvdele. Anvendes ved stress, indlæringsvanskeligheder og hukommelsesproblemer.'
+    },
+    {
+      title: 'Plexus-balancering',
+      text: 'Arbejde med solar plexus-området og postural justering — anvendes ved emotionel ustabilitet og angst. Indgår ofte som "stille fase" mellem mere stimulerende sekvenser, så klientens system kan integrere det igangsatte.'
+    }
+  ]
+};
+
+// ============================================
 // Tomme felter — motoren forventer dem
 // ============================================
 export const organOverviews = [];

@@ -47,7 +47,7 @@
         <div class="home-intro-block">
           <p class="home-eyebrow">Opslagsværk for kursister</p>
           <h1 class="home-headline">Lones uddannelser</h1>
-          <p class="home-lede">Vælg den uddannelse du vil arbejde med. Hver uddannelse har sit eget spor med moduler, kirtler, teknikker og faglige artikler.</p>
+          <p class="home-lede">Vælg den uddannelse du vil arbejde med. Hvert spor er et arbejdsrum mellem klienterne — ikke en introduktion til metoden.</p>
         </div>
 
         <nav class="hub-list" aria-label="Uddannelser">
@@ -141,17 +141,17 @@
           <span class="hub-feature-body">
             <span class="hub-feature-eyebrow">Værktøj</span>
             <span class="hub-feature-title">Mønster-analyse</span>
-            <span class="hub-feature-desc">Vælg klientens symptomer og se hvilke kirtler og mønstre der træder frem.</span>
+            <span class="hub-feature-desc">Vælg klientens symptomer og se hvilket reguleringsmønster der træder frem.</span>
           </span>
           <span class="hub-feature-arrow" aria-hidden="true">→</span>
         </button>
 
         <nav class="hub-list" aria-label="Sektioner i uddannelsen">
-          <button class="hub-row" data-hub="practice">
+          <button class="hub-row" data-hub="track-overview">
             <span class="hub-row-num">01</span>
             <span class="hub-row-body">
-              <span class="hub-row-title">Faglige artikler</span>
-              <span class="hub-row-desc">Lones egne artikler — om metoden, tryk og lag, vagusnerven, helingsreaktioner, rynker</span>
+              <span class="hub-row-title">Overblik</span>
+              <span class="hub-row-desc">Metodens kort, 8 kliniske temaer og nøglepunkter — til at orientere dig før et møde og slå op i mellem klienter</span>
             </span>
             <span class="hub-row-arrow" aria-hidden="true">→</span>
           </button>
@@ -160,22 +160,13 @@
             <span class="hub-row-num">02</span>
             <span class="hub-row-body">
               <span class="hub-row-title">De 5 moduler</span>
-              <span class="hub-row-desc">Fra fundamentet i modul 1 til klinisk praksis i modul 5</span>
-            </span>
-            <span class="hub-row-arrow" aria-hidden="true">→</span>
-          </button>
-
-          <button class="hub-row" data-hub="organs">
-            <span class="hub-row-num">03</span>
-            <span class="hub-row-body">
-              <span class="hub-row-title">Kirtlerne</span>
-              <span class="hub-row-desc">Masterkirtler og perifere kirtler — hypothalamus, hypofyse, skjoldbruskkirtel m.fl.</span>
+              <span class="hub-row-desc">Curriculum-reference — fra basebehandlingen i modul 1 til klinisk praksis i modul 5</span>
             </span>
             <span class="hub-row-arrow" aria-hidden="true">→</span>
           </button>
 
           <button class="hub-row" data-hub="meridians">
-            <span class="hub-row-num">04</span>
+            <span class="hub-row-num">03</span>
             <span class="hub-row-body">
               <span class="hub-row-title">Teknikkerne</span>
               <span class="hub-row-desc">7 grundfaser, 564 NP-punkter, Colonlink, YNSA, Castillos muskelstimulering m.fl.</span>
@@ -185,6 +176,45 @@
         </nav>
       </main>
 
+    </div>
+
+    <!-- ============================================
+         Track Overview — Overblik / 8 Temaer / Nøglepunkter
+         Et arbejdsrum for kursister mellem klienterne — ikke en
+         præsentation af uddannelsen.
+         ============================================ -->
+    <div id="screen-track-overview" class="screen">
+      <header class="detail-header track-overview-header">
+        <button class="back-btn" data-back-track="ansigtszone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Tilbage</span>
+        </button>
+        <div class="detail-title-area">
+          <p class="track-overview-eyebrow" id="track-overview-eyebrow"></p>
+          <h1 id="track-overview-title"></h1>
+          <p class="track-overview-lede" id="track-overview-lede"></p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <nav class="detail-tabs">
+          <button class="tab active" data-tab="track-ov-overview">Overblik</button>
+          <button class="tab" data-tab="track-ov-themes">8 Temaer</button>
+          <button class="tab" data-tab="track-ov-keypoints">Nøglepunkter</button>
+        </nav>
+
+        <div class="tab-content active" id="tab-track-ov-overview">
+          <div class="track-overview-body" id="track-overview-body"></div>
+        </div>
+
+        <div class="tab-content" id="tab-track-ov-themes">
+          <div class="themes-list" id="track-overview-themes"></div>
+        </div>
+
+        <div class="tab-content" id="tab-track-ov-keypoints">
+          <div class="keypoints-list" id="track-overview-keypoints"></div>
+        </div>
+      </main>
     </div>
 
     <!-- ============================================

@@ -613,7 +613,7 @@ let previousScreen = 'home'; // Track where we came from for back navigation
 
 // Language-switchable data references
 let langData = getLangData(getLanguage());
-let { organs, extraordinaryMeridians, organClock, fiveElements, tcmFoundation, sectionIntros, practiceGuide, organOverviews, meridianOverviews, symptomReference, patternLibrary, conversationStructure } = langData;
+let { organs, extraordinaryMeridians, organClock, fiveElements, tcmFoundation, sectionIntros, practiceGuide, educationOverview, organOverviews, meridianOverviews, symptomReference, patternLibrary, conversationStructure } = langData;
 
 // ============================================
 // Theme Toggle
@@ -684,7 +684,7 @@ function switchLanguage() {
 
   // Swap data references
   langData = getLangData(newLang);
-  ({ organs, extraordinaryMeridians, organClock, fiveElements, tcmFoundation, sectionIntros, practiceGuide, organOverviews, meridianOverviews, symptomReference, patternLibrary, conversationStructure } = langData);
+  ({ organs, extraordinaryMeridians, organClock, fiveElements, tcmFoundation, sectionIntros, practiceGuide, educationOverview, organOverviews, meridianOverviews, symptomReference, patternLibrary, conversationStructure } = langData);
 
   // Update all UI text
   updateUILanguage();
@@ -1539,8 +1539,14 @@ function setupThemeAccordion(containerId) {
 // ============================================
 function goBack() {
   // Determine where to go back to
-  const detailScreens = ['organ', 'element', 'foundation', 'overview', 'meridian', 'practice', 'symptom-analysis', 'polyvagal-analysis', 'client-handout'];
+  const detailScreens = ['organ', 'element', 'foundation', 'overview', 'meridian', 'practice', 'symptom-analysis', 'polyvagal-analysis', 'client-handout', 'track-overview'];
   const sectionScreens = ['section-practice', 'section-organs', 'section-elements', 'section-meridians', 'section-overviews'];
+
+  // Track-overview hører til ansigtszone-sporet — gå tilbage dertil
+  if (currentScreen === 'track-overview') {
+    showScreen('track-ansigtszone');
+    return;
+  }
 
   if (detailScreens.includes(currentScreen)) {
     // If we came from a section screen, go back there
@@ -1582,6 +1588,14 @@ function setupBackButtons() {
     });
   });
 
+  // Track-overview back button (data-back-track="ansigtszone")
+  document.querySelectorAll('.back-btn[data-back-track]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const track = btn.dataset.backTrack;
+      showScreen(`track-${track}`);
+    });
+  });
+
   // Browser back button
   window.addEventListener('popstate', () => {
     if (currentScreen !== 'home') {
@@ -1600,6 +1614,70 @@ showScreen = function(screenId) {
   }
   originalShowScreen(screenId);
 };
+
+// ============================================
+// Track Overview — Overblik / 8 Temaer / Nøglepunkter
+// Rendres on-demand når kursisten åbner skærmen.
+// ============================================
+function showTrackOverview() {
+  const ov = educationOverview;
+  if (!ov) return;
+
+  const eyebrowEl = document.getElementById('track-overview-eyebrow');
+  const titleEl = document.getElementById('track-overview-title');
+  const ledeEl = document.getElementById('track-overview-lede');
+  if (eyebrowEl) eyebrowEl.textContent = ov.eyebrow || '';
+  if (titleEl) titleEl.textContent = ov.title || '';
+  if (ledeEl) ledeEl.textContent = ov.lede || '';
+
+  const body = document.getElementById('track-overview-body');
+  if (body && ov.overview) {
+    body.innerHTML = ov.overview.map(section => `
+      <section class="track-ov-section">
+        <h2 class="track-ov-heading">${section.heading}</h2>
+        ${section.paragraphs.map(p => `<p class="track-ov-paragraph">${p}</p>`).join('')}
+      </section>
+    `).join('');
+  }
+
+  const themesEl = document.getElementById('track-overview-themes');
+  if (themesEl && ov.themes) {
+    themesEl.innerHTML = ov.themes.map((theme, i) => `
+      <div class="theme-item">
+        <div class="theme-header">
+          <span class="theme-number">${i + 1}</span>
+          <span class="theme-title">
+            ${theme.title}
+            ${theme.subtitle ? `<span class="theme-subtitle">${theme.subtitle}</span>` : ''}
+          </span>
+          <svg class="theme-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="theme-body">
+          ${theme.lead ? `<p class="theme-lead">${theme.lead}</p>` : ''}
+          <div class="theme-questions">
+            ${theme.questions.map(q => `<div class="question">${q}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const kpEl = document.getElementById('track-overview-keypoints');
+  if (kpEl && ov.keyPoints) {
+    kpEl.innerHTML = ov.keyPoints.map(kp => `
+      <div class="keypoint">
+        <div class="keypoint-title">${kp.title}</div>
+        <div class="keypoint-text">${kp.text}</div>
+      </div>
+    `).join('');
+  }
+
+  resetTabs('screen-track-overview');
+  showScreen('track-overview');
+  setupThemeAccordion('track-overview-themes');
+}
 
 // ============================================
 // Render Practice Guide Grid
@@ -1767,6 +1845,9 @@ function handleNavigation(navId) {
       break;
     case 'track-ansigtszone':
       showScreen('track-ansigtszone');
+      break;
+    case 'track-overview':
+      showTrackOverview();
       break;
     case 'practice':
       showScreen('section-practice');
