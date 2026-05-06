@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Lone Sørensen">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Metode Lone Sørensen — Opslagsværk</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- ============================================
+         Home Screen — Hub
+         ============================================ -->
+    <div id="screen-home" class="screen active">
+      <div class="hero">
+        <!-- Hero-billede tilføjes senere. Tomt felt holder layoutet stabilt. -->
+      </div>
+
+      <div class="home-brand">
+        <div class="home-top-bar">
+          <button class="home-top-btn home-top-left" data-forward="hamburger-btn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <h1 class="home-brand-title">Metode Lone Sørensen</h1>
+          <div class="home-top-right">
+            <button class="home-top-btn" data-forward="search-btn" aria-label="Søg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <button class="home-top-btn" data-forward="theme-toggle" aria-label="Skift mellem lyst og mørkt tema">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="home-brand-subtitle">Opslagsværk for kursister</p>
+      </div>
+
+      <main class="home-hub">
+        <p class="home-intro">Et arbejdsrum mellem dine kurser — slå op, repetér, find sammenhænge.</p>
+
+        <div class="hub-grid">
+          <button class="hub-card" data-hub="practice">
+            <div class="hub-card-illustration">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- I Praksis: akupunktur-nål der åbner et felt -->
+                <circle cx="40" cy="14" r="2.2" stroke="rgba(var(--ink-soft), 0.60)" stroke-width="1" fill="none"/>
+                <line x1="40" y1="16" x2="40" y2="48" stroke="rgba(var(--ink-deep), 0.70)" stroke-width="1.2"/>
+                <circle cx="40" cy="50" r="2.4" fill="var(--accent-gold)" opacity="0.70" class="hub-anim"/>
+                <path d="M20,58 Q40,48 60,58" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1" class="hub-flow"/>
+                <path d="M14,64 Q40,50 66,64" stroke="rgba(var(--ink-soft), 0.28)" stroke-width="0.9" class="hub-flow" style="animation-delay:0.6s"/>
+                <path d="M10,70 Q40,52 70,70" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" class="hub-flow" style="animation-delay:1.2s"/>
+              </svg>
+            </div>
+            <div class="hub-card-text">
+              <div class="hub-card-title">In Practice</div>
+              <div class="hub-card-desc">Guidance for dialogue and pattern discovery</div>
+            </div>
+            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <button class="hub-card" data-hub="organs">
+            <div class="hub-card-illustration">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 12 Organer: kropskort med lysende punkter langs meridianen -->
+                <circle cx="40" cy="18" r="6" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1"/>
+                <path d="M28,32 Q40,34 52,32" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
+                <path d="M30,32 L28,64" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+                <path d="M50,32 L52,64" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+                <path d="M28,64 Q40,68 52,64" stroke="rgba(var(--ink-soft), 0.35)" stroke-width="1"/>
+                <line x1="28" y1="34" x2="18" y2="46" stroke="rgba(var(--ink-soft), 0.25)" stroke-width="0.9"/>
+                <line x1="52" y1="34" x2="62" y2="46" stroke="rgba(var(--ink-soft), 0.25)" stroke-width="0.9"/>
+                <circle cx="40" cy="38" r="1.5" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim"/>
+                <circle cx="40" cy="46" r="1.7" fill="var(--accent-gold)" opacity="0.65" class="hub-anim" style="animation-delay:0.8s"/>
+                <circle cx="40" cy="54" r="1.5" fill="rgba(var(--ink-glow), 0.65)" class="hub-anim" style="animation-delay:1.6s"/>
+                <circle cx="40" cy="62" r="1.3" fill="rgba(var(--ink-glow), 0.55)"/>
+              </svg>
+            </div>
+            <div class="hub-card-text">
+              <div class="hub-card-title">The 12 Organs</div>
+              <div class="hub-card-desc">Organ systems, meridians and the organ clock</div>
+            </div>
+            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <button class="hub-card" data-hub="elements">
+            <div class="hub-card-illustration">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fem Elementer: fem unikke mikro-motiver arrangeret cirkulært -->
+                <circle cx="40" cy="40" r="24" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8"/>
+                <!-- Træ (top): gren med spire -->
+                <path d="M40,20 L40,10 M40,14 L36,11 M40,15 L44,12" stroke="var(--el-wood)" stroke-width="1.2" opacity="0.75" fill="none"/>
+                <!-- Ild (øverst højre): flamme -->
+                <path d="M58,22 Q60,25 59,28 Q62,25 63,28 Q61,30 59,30" stroke="var(--el-fire)" stroke-width="1.2" opacity="0.75" fill="none"/>
+                <!-- Jord (nederst højre): bjerg -->
+                <path d="M54,58 L59,52 L64,58" stroke="var(--el-earth)" stroke-width="1.2" opacity="0.75" fill="none"/>
+                <!-- Metal (nederst venstre): klokke/cirkel -->
+                <circle cx="21" cy="55" r="3" stroke="var(--el-metal)" stroke-width="1.2" opacity="0.75" fill="none"/>
+                <!-- Vand (øverst venstre): bølger -->
+                <path d="M14,24 Q18,22 22,24 Q26,26 30,24" stroke="var(--el-water)" stroke-width="1.2" opacity="0.75" fill="none"/>
+                <!-- Centralt hjerte -->
+                <circle cx="40" cy="40" r="2" fill="var(--accent-gold)" opacity="0.65" class="hub-anim"/>
+              </svg>
+            </div>
+            <div class="hub-card-text">
+              <div class="hub-card-title">Five Elements</div>
+              <div class="hub-card-desc">Wood, Fire, Earth, Metal, Water and core principles</div>
+            </div>
+            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <button class="hub-card" data-hub="meridians">
+            <div class="hub-card-illustration">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 8 Ekstraordinære: dobbelt-helix med 8 krydspunkter -->
+                <path d="M26,12 Q46,24 26,40 Q6,56 26,68" stroke="rgba(var(--ink-deep), 0.65)" stroke-width="1.2"/>
+                <path d="M54,12 Q34,24 54,40 Q74,56 54,68" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1.1"/>
+                <line x1="40" y1="8" x2="40" y2="72" stroke="rgba(var(--ink-soft), 0.20)" stroke-width="0.8" stroke-dasharray="2 4"/>
+                <circle cx="40" cy="18" r="1.4" fill="rgba(var(--ink-glow), 0.65)"/>
+                <circle cx="40" cy="28" r="1.4" fill="rgba(var(--ink-soft), 0.55)"/>
+                <circle cx="40" cy="34" r="1.5" fill="var(--accent-gold)" opacity="0.65" class="hub-anim"/>
+                <circle cx="40" cy="40" r="1.4" fill="rgba(var(--ink-glow), 0.60)"/>
+                <circle cx="40" cy="46" r="1.5" fill="var(--accent-gold)" opacity="0.55" class="hub-anim" style="animation-delay:1.2s"/>
+                <circle cx="40" cy="52" r="1.4" fill="rgba(var(--ink-soft), 0.55)"/>
+                <circle cx="40" cy="58" r="1.4" fill="rgba(var(--ink-glow), 0.60)"/>
+                <circle cx="40" cy="64" r="1.4" fill="rgba(var(--ink-glow), 0.55)"/>
+              </svg>
+            </div>
+            <div class="hub-card-text">
+              <div class="hub-card-title">The 8 Extraordinary</div>
+              <div class="hub-card-desc">Deeper energy systems and meridians</div>
+            </div>
+            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <button class="hub-card" data-hub="overviews">
+            <div class="hub-card-illustration">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Overblik: vifte af perspektiver fra ét centrum -->
+                <circle cx="40" cy="60" r="2.2" fill="var(--accent-gold)" opacity="0.70"/>
+                <line x1="40" y1="60" x2="12" y2="48" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
+                <line x1="40" y1="60" x2="22" y2="26" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
+                <line x1="40" y1="60" x2="40" y2="14" stroke="rgba(var(--ink-deep), 0.60)" stroke-width="1.1"/>
+                <line x1="40" y1="60" x2="58" y2="26" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
+                <line x1="40" y1="60" x2="68" y2="48" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
+                <path d="M12,48 Q40,18 68,48" stroke="rgba(var(--ink-soft), 0.22)" stroke-width="0.8" stroke-dasharray="2 4"/>
+                <circle cx="21" cy="45" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim"/>
+                <circle cx="27" cy="32" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:0.6s"/>
+                <circle cx="40" cy="22" r="1.5" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim" style="animation-delay:1.2s"/>
+                <circle cx="53" cy="32" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:1.8s"/>
+                <circle cx="59" cy="45" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:2.4s"/>
+              </svg>
+            </div>
+            <div class="hub-card-text">
+              <div class="hub-card-title">Overviews</div>
+              <div class="hub-card-desc">Quick reference for organs, symptoms and dialogue</div>
+            </div>
+            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </main>
+
+    </div>
+
+    <!-- ============================================
+         Section Screen — I Praksis
+         ============================================ -->
+    <div id="screen-section-practice" class="screen">
+      <header class="section-screen-header">
+        <button class="back-btn" data-back="home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Hjem</span>
+        </button>
+        <div class="section-screen-title-area">
+          <div class="section-screen-illustration section-ill-practice">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- I Praksis: tre akupunkturnåle, slange-bølge vandrer gennem rækken -->
+              <g class="hub-snake" style="--delay:0s">
+                <circle cx="70" cy="18" r="2.8" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
+                <line x1="70" y1="21" x2="70" y2="62" stroke="rgba(var(--ink-deep), 0.60)" stroke-width="1.1"/>
+                <circle cx="70" cy="64" r="2.8" fill="var(--accent-gold)" opacity="0.65"/>
+              </g>
+              <g class="hub-snake" style="--delay:2s">
+                <circle cx="100" cy="14" r="2.8" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
+                <line x1="100" y1="17" x2="100" y2="66" stroke="rgba(var(--ink-deep), 0.65)" stroke-width="1.2"/>
+                <circle cx="100" cy="68" r="3.2" fill="var(--accent-gold)" opacity="0.70" class="hub-anim"/>
+              </g>
+              <g class="hub-snake" style="--delay:4s">
+                <circle cx="130" cy="18" r="2.8" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
+                <line x1="130" y1="21" x2="130" y2="62" stroke="rgba(var(--ink-deep), 0.60)" stroke-width="1.1"/>
+                <circle cx="130" cy="64" r="2.8" fill="var(--accent-gold)" opacity="0.65"/>
+              </g>
+
+              <!-- Energifelt der udstråler -->
+              <path d="M32,84 Q100,70 168,84" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1.1" class="hub-flow"/>
+              <path d="M22,96 Q100,80 178,96" stroke="rgba(var(--ink-soft), 0.30)" stroke-width="1" class="hub-flow" style="animation-delay:0.6s"/>
+              <path d="M12,108 Q100,90 188,108" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.9" class="hub-flow" style="animation-delay:1.2s"/>
+            </svg>
+          </div>
+          <h1>In Practice</h1>
+          <p class="section-screen-subtitle">Guidance · Dialogue · Pattern Discovery</p>
+        </div>
+      </header>
+      <main class="section-screen-content">
+        <div class="section-intro" id="intro-practice"></div>
+        <div class="practice-grid" id="practice-grid"></div>
+      </main>
+    </div>
+
+    <!-- ============================================
+         Section Screen — Organer
+         ============================================ -->
+    <div id="screen-section-organs" class="screen">
+      <header class="section-screen-header">
+        <button class="back-btn" data-back="home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Hjem</span>
+        </button>
+        <div class="section-screen-title-area">
+          <div class="section-screen-illustration section-ill-organs">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- 12 Organer: kropskort med Ren Mai-punkter -->
+              <!-- Statisk kropssilhuet -->
+              <circle cx="100" cy="16" r="7" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1"/>
+              <path d="M82,32 Q100,34 118,32" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
+              <path d="M84,32 L78,100" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+              <path d="M116,32 L122,100" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+              <path d="M78,100 Q100,108 122,100" stroke="rgba(var(--ink-soft), 0.35)" stroke-width="1"/>
+              <line x1="82" y1="36" x2="62" y2="56" stroke="rgba(var(--ink-soft), 0.28)" stroke-width="0.9"/>
+              <line x1="118" y1="36" x2="138" y2="56" stroke="rgba(var(--ink-soft), 0.28)" stroke-width="0.9"/>
+              <!-- Ren Mai-punkter — slangen vandrer ned ad centerlinjen -->
+              <g class="hub-snake" style="--delay:0s">
+                <circle cx="100" cy="38" r="1.8" fill="rgba(var(--ink-glow), 0.70)"/>
+              </g>
+              <g class="hub-snake" style="--delay:0.75s">
+                <circle cx="100" cy="46" r="1.8" fill="rgba(var(--ink-glow), 0.60)"/>
+              </g>
+              <g class="hub-snake" style="--delay:1.5s">
+                <circle cx="100" cy="54" r="2.0" fill="var(--accent-gold)" opacity="0.70"/>
+              </g>
+              <g class="hub-snake" style="--delay:2.25s">
+                <circle cx="100" cy="62" r="1.8" fill="rgba(var(--ink-glow), 0.60)"/>
+              </g>
+              <g class="hub-snake" style="--delay:3s">
+                <circle cx="100" cy="70" r="2.0" fill="var(--accent-gold)" opacity="0.55"/>
+              </g>
+              <g class="hub-snake" style="--delay:3.75s">
+                <circle cx="100" cy="78" r="1.8" fill="rgba(var(--ink-glow), 0.60)"/>
+              </g>
+              <g class="hub-snake" style="--delay:4.5s">
+                <circle cx="100" cy="86" r="1.8" fill="rgba(var(--ink-glow), 0.55)"/>
+              </g>
+              <g class="hub-snake" style="--delay:5.25s">
+                <circle cx="100" cy="94" r="1.6" fill="rgba(var(--ink-glow), 0.50)"/>
+              </g>
+            </svg>
+          </div>
+          <h1>The 12 Organs</h1>
+          <p class="section-screen-subtitle">Meridians & Organ Systems</p>
+        </div>
+      </header>
+      <main class="section-screen-content">
+        <div class="section-intro" id="intro-organs"></div>
+        <div class="organ-grid" id="organ-grid"></div>
+
+        <div class="section-divider">
+          <span>Organuret</span>
+        </div>
+        <div class="clock-container" id="organ-clock"></div>
+      </main>
+    </div>
+
+    <!-- ============================================
+         Section Screen — Elementer & Grundprincipper
+         ============================================ -->
+    <div id="screen-section-elements" class="screen">
+      <header class="section-screen-header">
+        <button class="back-btn" data-back="home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Hjem</span>
+        </button>
+        <div class="section-screen-title-area">
+          <div class="section-screen-illustration section-ill-elements">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fem Elementer: rund cirkel med fem unikke mikro-motiver på randen -->
+              <circle cx="100" cy="60" r="40" stroke="rgba(var(--ink-soft), 0.35)" stroke-width="1"/>
+              <!-- Ke-cyklus (indre stjerne, stiplet) -->
+              <line x1="100" y1="20" x2="124" y2="92" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <line x1="124" y1="92" x2="62" y2="48" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <line x1="62" y1="48" x2="138" y2="48" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <line x1="138" y1="48" x2="76" y2="92" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <line x1="76" y1="92" x2="100" y2="20" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <!-- Træ (top, 0°): gren med spire — hver figur har egen rytme for asymmetrisk drift -->
+              <path d="M100,28 L100,10 M100,16 L93,9 M100,17 L107,10" stroke="var(--el-wood)" stroke-width="1.4" opacity="0.85" class="hub-drift" style="--delay:0s; --dur:4.2s"/>
+              <!-- Ild (72°): flamme -->
+              <path d="M136,40 Q139,44 138,48 Q142,44 144,48 Q141,52 136,52" stroke="var(--el-fire)" stroke-width="1.4" opacity="0.85" class="hub-drift" style="--delay:0.5s; --dur:3.1s"/>
+              <!-- Jord (144°): bjerg-trekant -->
+              <path d="M116,98 L124,86 L132,98" stroke="var(--el-earth)" stroke-width="1.4" opacity="0.85" class="hub-drift" style="--delay:1.3s; --dur:4.7s"/>
+              <!-- Metal (216°): klokke/cirkel -->
+              <circle cx="76" cy="92" r="6" stroke="var(--el-metal)" stroke-width="1.4" opacity="0.85" class="hub-drift" style="--delay:2.1s; --dur:3.6s"/>
+              <!-- Vand (288°): bølger -->
+              <path d="M54,44 Q58,40 62,44 Q66,48 70,44" stroke="var(--el-water)" stroke-width="1.4" opacity="0.85" class="hub-drift" style="--delay:2.9s; --dur:4.0s"/>
+              <!-- Central guld-hjerte (pulserer) -->
+              <circle cx="100" cy="60" r="2.6" fill="var(--accent-gold)" opacity="0.70" class="hub-anim"/>
+            </svg>
+          </div>
+          <h1>Five Elements</h1>
+          <p class="section-screen-subtitle">Wood · Fire · Earth · Metal · Water</p>
+        </div>
+      </header>
+      <main class="section-screen-content">
+        <div class="section-intro" id="intro-elements"></div>
+        <div class="elements-grid" id="elements-grid"></div>
+
+        <div class="section-divider">
+          <span>Grundprincipper</span>
+        </div>
+        <div class="section-intro" id="intro-foundation"></div>
+        <div class="foundation-grid" id="foundation-grid"></div>
+      </main>
+    </div>
+
+    <!-- ============================================
+         Section Screen — Meridianer
+         ============================================ -->
+    <div id="screen-section-meridians" class="screen">
+      <header class="section-screen-header">
+        <button class="back-btn" data-back="home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Hjem</span>
+        </button>
+        <div class="section-screen-title-area">
+          <div class="section-screen-illustration section-ill-meridians">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Central axis — subtle -->
+              <line x1="100" y1="8" x2="100" y2="112" stroke="var(--ill-silver)" stroke-width="0.5" opacity="0.15"/>
+              <!-- 8 Ekstraordinære: dobbelt-helix + slange-flow langs midteraksen -->
+              <line x1="100" y1="6" x2="100" y2="114" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" stroke-dasharray="3 5"/>
+              <path d="M60,6 Q120,30 60,60 Q0,90 60,114" stroke="rgba(var(--ink-deep), 0.65)" stroke-width="1.2"/>
+              <path d="M140,6 Q80,30 140,60 Q200,90 140,114" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1.1"/>
+              <!-- 8 hvilepunkter — slangen vandrer ned ad aksen -->
+              <g class="hub-snake" style="--delay:0s">
+                <circle cx="100" cy="18" r="2.2" fill="rgba(var(--ink-glow), 0.65)"/>
+              </g>
+              <g class="hub-snake" style="--delay:0.75s">
+                <circle cx="100" cy="30" r="2.0" fill="rgba(var(--ink-soft), 0.55)"/>
+              </g>
+              <g class="hub-snake" style="--delay:1.5s">
+                <circle cx="100" cy="42" r="2.4" fill="var(--accent-gold)" opacity="0.65"/>
+              </g>
+              <g class="hub-snake" style="--delay:2.25s">
+                <circle cx="100" cy="54" r="2.0" fill="rgba(var(--ink-glow), 0.60)"/>
+              </g>
+              <g class="hub-snake" style="--delay:3s">
+                <circle cx="100" cy="66" r="2.0" fill="rgba(var(--ink-glow), 0.60)"/>
+              </g>
+              <g class="hub-snake" style="--delay:3.75s">
+                <circle cx="100" cy="78" r="2.4" fill="var(--accent-gold)" opacity="0.55"/>
+              </g>
+              <g class="hub-snake" style="--delay:4.5s">
+                <circle cx="100" cy="90" r="2.0" fill="rgba(var(--ink-soft), 0.55)"/>
+              </g>
+              <g class="hub-snake" style="--delay:5.25s">
+                <circle cx="100" cy="102" r="2.2" fill="rgba(var(--ink-glow), 0.65)"/>
+              </g>
+            </svg>
+          </div>
+          <h1>The 8 Extraordinary</h1>
+          <p class="section-screen-subtitle">Deeper Energy Systems</p>
+        </div>
+      </header>
+      <main class="section-screen-content">
+        <div class="section-intro" id="intro-extraordinary"></div>
+        <div class="meridian-grid" id="meridian-grid"></div>
+      </main>
+    </div>
+
+    <!-- ============================================
+         Section Screen — Oversigter
+         ============================================ -->
+    <div id="screen-section-overviews" class="screen">
+      <header class="section-screen-header">
+        <button class="back-btn" data-back="home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Hjem</span>
+        </button>
+        <div class="section-screen-title-area">
+          <div class="section-screen-illustration section-ill-overviews">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Overblik: udbredt vifte — stråler svajer som blade i vinden -->
+              <!-- Bue over vifte (statisk) -->
+              <path d="M20,80 Q100,4 180,80" stroke="rgba(var(--ink-soft), 0.22)" stroke-width="0.8" stroke-dasharray="3 5"/>
+              <!-- Vifte: translate til basepunkt så hver stråle-gruppe roterer om (0,0) = basen -->
+              <g transform="translate(100 104)">
+                <g class="ray-sway" style="animation-delay:0s">
+                  <line x1="0" y1="0" x2="-80" y2="-24" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+                  <circle cx="-60" cy="-30" r="1.6" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:0.6s">
+                  <line x1="0" y1="0" x2="-62" y2="-68" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1"/>
+                  <circle cx="-48" cy="-52" r="1.6" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:0.4s"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:1.2s">
+                  <line x1="0" y1="0" x2="-30" y2="-86" stroke="rgba(var(--ink-soft), 0.60)" stroke-width="1"/>
+                  <circle cx="-20" cy="-66" r="1.8" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim" style="animation-delay:0.8s"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:1.8s">
+                  <line x1="0" y1="0" x2="0" y2="-94" stroke="rgba(var(--ink-deep), 0.65)" stroke-width="1.1"/>
+                  <circle cx="0" cy="-72" r="2.0" fill="rgba(var(--ink-glow), 0.75)" class="hub-anim" style="animation-delay:1.2s"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:2.4s">
+                  <line x1="0" y1="0" x2="30" y2="-86" stroke="rgba(var(--ink-soft), 0.60)" stroke-width="1"/>
+                  <circle cx="20" cy="-66" r="1.8" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim" style="animation-delay:1.6s"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:3s">
+                  <line x1="0" y1="0" x2="62" y2="-68" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1"/>
+                  <circle cx="48" cy="-52" r="1.6" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:2.0s"/>
+                </g>
+                <g class="ray-sway" style="animation-delay:3.6s">
+                  <line x1="0" y1="0" x2="80" y2="-24" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
+                  <circle cx="60" cy="-30" r="1.6" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:2.4s"/>
+                </g>
+                <!-- Fælles basepunkt (statisk anker, også relativ) -->
+                <circle cx="0" cy="0" r="3" fill="var(--accent-gold)" opacity="0.70"/>
+              </g>
+            </svg>
+          </div>
+          <h1>Overviews</h1>
+          <p class="section-screen-subtitle">Quick Reference · Organs · Meridians · Dialogue</p>
+        </div>
+      </header>
+      <main class="section-screen-content">
+        <div class="section-intro" id="intro-overviews"></div>
+        <div class="overview-tabs" id="overview-tabs">
+          <button class="overview-tab active" data-ov-tab="organs">Organs</button>
+          <button class="overview-tab" data-ov-tab="patterns">Patterns</button>
+          <button class="overview-tab" data-ov-tab="symptoms">Symptoms</button>
+          <button class="overview-tab" data-ov-tab="meridians">Meridians</button>
+          <button class="overview-tab" data-ov-tab="conversation">Dialogue</button>
+        </div>
+        <div class="overview-tab-content active" id="ov-tab-organs">
+          <div class="overview-grid" id="overview-organ-grid"></div>
+        </div>
+        <div class="overview-tab-content" id="ov-tab-patterns">
+          <div id="overview-patterns-content"></div>
+        </div>
+        <div class="overview-tab-content" id="ov-tab-symptoms">
+          <div id="overview-symptoms-content"></div>
+        </div>
+        <div class="overview-tab-content" id="ov-tab-meridians">
+          <div class="overview-grid" id="overview-meridian-grid"></div>
+        </div>
+        <div class="overview-tab-content" id="ov-tab-conversation">
+          <div id="overview-conversation-content"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ============================================
+         Detail Screens (unchanged)
+         ============================================ -->
+
+    <!-- Practice Guide Detail Screen -->
+    <div id="screen-practice" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-practice">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="practice-detail-icon"></span>
+          <h1 id="practice-detail-title"></h1>
+          <p class="detail-nickname" id="practice-detail-subtitle"></p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <div class="practice-detail-body" id="practice-detail-body"></div>
+      </main>
+    </div>
+
+    <!-- Polyvagal Analysis Screen — parallel to symptom-analysis, ANS-focused -->
+    <div id="screen-polyvagal-analysis" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-polyvagal-analysis">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon pv-detail-icon" aria-hidden="true">
+            <svg viewBox="0 0 60 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" width="22" height="32">
+              <line x1="15" y1="6" x2="15" y2="84"/>
+              <line x1="45" y1="6" x2="45" y2="84"/>
+              <line x1="15" y1="20" x2="45" y2="20"/>
+              <line x1="15" y1="45" x2="45" y2="45"/>
+              <line x1="15" y1="70" x2="45" y2="70"/>
+            </svg>
+          </span>
+          <h1 id="polyvagal-analysis-title">Mønstre i nervesystemet</h1>
+          <p class="detail-nickname" id="polyvagal-analysis-subtitle">Polyvagal-perspektivet</p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <div class="symptom-analysis-body">
+          <div class="sa-intro" id="pv-intro"></div>
+          <div class="sa-disclaimer" id="pv-disclaimer"></div>
+
+          <div class="sa-counter-row">
+            <div class="sa-counter" id="pv-counter">0 af 9 valgt</div>
+            <button class="sa-reset-btn" id="pv-reset-btn" type="button">Nulstil</button>
+          </div>
+
+          <div class="sa-symptom-grid" id="pv-symptom-grid"></div>
+
+          <div class="sa-action-row">
+            <button class="sa-analyse-btn" id="pv-analyse-btn" type="button" disabled>
+              <span class="sa-analyse-label">Analysér mønster</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="sa-results" id="pv-results" hidden></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Symptom Analysis Screen -->
+    <div id="screen-symptom-analysis" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-symptom-analysis">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="symptom-analysis-icon">◈</span>
+          <h1 id="symptom-analysis-title">Symptom-Analyse</h1>
+          <p class="detail-nickname" id="symptom-analysis-subtitle">Resonans · Indgangsvinkel · Mønsteropdagelse</p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <div class="symptom-analysis-body">
+          <div class="sa-intro" id="sa-intro"></div>
+
+          <div class="sa-disclaimer" id="sa-disclaimer"></div>
+
+          <div class="sa-counter-row">
+            <div class="sa-counter" id="sa-counter">0 af 9 valgt</div>
+            <button class="sa-reset-btn" id="sa-reset-btn" type="button">Nulstil</button>
+          </div>
+
+          <div class="sa-symptom-grid" id="sa-symptom-grid"></div>
+
+          <div class="sa-action-row">
+            <button class="sa-analyse-btn" id="sa-analyse-btn" type="button" disabled>
+              <span class="sa-analyse-label">Analysér mønster</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="sa-results" id="sa-results" hidden></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Organ Detail Screen -->
+    <div id="screen-organ" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-organ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="organ-detail-icon"></span>
+          <h1 id="organ-detail-name"></h1>
+          <p class="detail-nickname" id="organ-detail-nickname"></p>
+        </div>
+        <div class="detail-meta" id="organ-detail-meta"></div>
+      </header>
+
+      <main class="detail-content">
+        <nav class="detail-tabs">
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="themes">8 Themes</button>
+          <button class="tab" data-tab="keypoints">Key Points</button>
+        </nav>
+
+        <div class="tab-content active" id="tab-overview">
+          <div class="description-text" id="organ-description"></div>
+        </div>
+
+        <div class="tab-content" id="tab-themes">
+          <div class="themes-list" id="organ-themes"></div>
+        </div>
+
+        <div class="tab-content" id="tab-keypoints">
+          <div class="keypoints-list" id="organ-keypoints"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Element Detail Screen -->
+    <div id="screen-element" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-element">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="element-detail-icon"></span>
+          <h1 id="element-detail-name"></h1>
+          <p class="detail-nickname" id="element-detail-chinese"></p>
+        </div>
+        <div class="detail-meta" id="element-detail-meta"></div>
+      </header>
+
+      <main class="detail-content">
+        <nav class="detail-tabs">
+          <button class="tab active" data-tab="el-overview">Overview</button>
+          <button class="tab" data-tab="el-correspondences">Correspondences</button>
+          <button class="tab" data-tab="el-cycles">Cycles</button>
+          <button class="tab" data-tab="el-seasonal">Seasonal Wisdom</button>
+        </nav>
+
+        <div class="tab-content active" id="tab-el-overview">
+          <div class="description-text" id="element-description"></div>
+          <div class="element-organs-nav" id="element-organs-nav"></div>
+        </div>
+
+        <div class="tab-content" id="tab-el-correspondences">
+          <div class="correspondences-list" id="element-correspondences"></div>
+        </div>
+
+        <div class="tab-content" id="tab-el-cycles">
+          <div class="cycles-content" id="element-cycles"></div>
+        </div>
+
+        <div class="tab-content" id="tab-el-seasonal">
+          <div class="seasonal-list" id="element-seasonal"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Foundation Detail Screen -->
+    <div id="screen-foundation" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-foundation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <h1 id="foundation-detail-title"></h1>
+          <p class="detail-nickname" id="foundation-detail-subtitle"></p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <div class="tab-content active" id="foundation-body"></div>
+      </main>
+    </div>
+
+    <!-- Overview Detail Screen -->
+    <div id="screen-overview" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-overview">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="overview-detail-icon"></span>
+          <h1 id="overview-detail-name"></h1>
+          <p class="detail-nickname" id="overview-detail-nickname"></p>
+        </div>
+      </header>
+
+      <main class="detail-content">
+        <div id="overview-detail-body"></div>
+      </main>
+    </div>
+
+    <!-- Meridian Detail Screen -->
+    <div id="screen-meridian" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-meridian">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon" id="meridian-detail-icon"></span>
+          <h1 id="meridian-detail-name"></h1>
+          <p class="detail-nickname" id="meridian-detail-nickname"></p>
+        </div>
+        <div class="detail-meta" id="meridian-detail-meta"></div>
+      </header>
+
+      <main class="detail-content">
+        <nav class="detail-tabs">
+          <button class="tab active" data-tab="m-overview">Overview</button>
+          <button class="tab" data-tab="m-pathway">Pathway</button>
+          <button class="tab" data-tab="m-keypoints">Key Points</button>
+          <button class="tab" data-tab="m-themes">8 Themes</button>
+        </nav>
+
+        <div class="tab-content active" id="tab-m-overview">
+          <div class="description-text" id="meridian-description"></div>
+          <div id="meridian-connections"></div>
+        </div>
+
+        <div class="tab-content" id="tab-m-pathway">
+          <div id="meridian-pathway"></div>
+        </div>
+
+        <div class="tab-content" id="tab-m-keypoints">
+          <div class="keypoints-list" id="meridian-keypoints"></div>
+        </div>
+
+        <div class="tab-content" id="tab-m-themes">
+          <div class="themes-list" id="meridian-themes"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Clients List Screen -->
+    <div id="screen-clients" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-clients">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon">◈</span>
+          <h1 id="clients-title">Mine klienter</h1>
+          <p class="detail-nickname" id="clients-subtitle">Lokale forløbs-skitser. Forlader aldrig din enhed.</p>
+        </div>
+      </header>
+      <main class="detail-content">
+        <div class="clients-body">
+          <div class="clients-list" id="clients-list"></div>
+          <p class="clients-empty" id="clients-empty" hidden></p>
+          <p class="clients-disclaimer" id="clients-disclaimer"></p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Client Handout Screen — printable home practice document -->
+    <div id="screen-client-handout" class="screen">
+      <header class="handout-toolbar no-print">
+        <button class="back-btn" id="btn-back-handout" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Tilbage</span>
+        </button>
+        <div class="handout-toolbar-actions">
+          <button class="handout-tool-btn handout-tool-btn-primary" id="handout-share-btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            <span class="handout-tool-text">
+              <span class="handout-tool-label">Send link til klienten</span>
+              <span class="handout-tool-hint">via Mail, SMS eller WhatsApp — klienten modtager seglet og hjem-anvisning</span>
+            </span>
+          </button>
+          <button class="handout-tool-btn" id="handout-print-btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span class="handout-tool-text">
+              <span class="handout-tool-label">Print / Gem som PDF</span>
+              <span class="handout-tool-hint">til papir, eller hvis klienten foretrækker en PDF</span>
+            </span>
+          </button>
+        </div>
+      </header>
+      <main class="handout-page-wrap">
+        <article class="handout-document" id="handout-document">
+          <header class="handout-letterhead">
+            <div class="handout-seal-wrap" id="handout-seal-wrap">
+              <!-- Segl-billede kan tilføjes senere -->
+            </div>
+            <div class="handout-letterhead-text">
+              <div class="handout-eyebrow">Til dit hjem</div>
+              <h1 class="handout-title" id="handout-title"></h1>
+              <div class="handout-meta">
+                <span class="handout-meta-date" id="handout-date"></span>
+                <span class="handout-meta-sep" id="handout-meta-sep">·</span>
+                <span class="handout-meta-client" id="handout-client" contenteditable="true" data-placeholder="Klient-kode"></span>
+              </div>
+            </div>
+          </header>
+
+          <section class="handout-section handout-section-summary">
+            <h2 class="handout-h2">Det vi har set sammen i dag</h2>
+            <p class="handout-lede" id="handout-summary"></p>
+          </section>
+
+          <section class="handout-section">
+            <h2 class="handout-h2">Hvad du selv kan gøre</h2>
+            <div class="handout-practices" id="handout-practices"></div>
+          </section>
+
+          <footer class="handout-footer">
+            <div class="handout-rule"></div>
+            <p class="handout-footer-text" id="handout-footer-text"></p>
+            <div class="handout-signature-line">
+              <span class="handout-signature-dash">—</span>
+              <span class="handout-signature" id="handout-therapist-name" contenteditable="true" data-placeholder="Tilføj dit navn"></span>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+
+    <!-- Client Detail Screen -->
+    <div id="screen-client-detail" class="screen">
+      <header class="detail-header">
+        <button class="back-btn" id="btn-back-client-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back</span>
+        </button>
+        <div class="detail-title-area">
+          <span class="detail-icon">◈</span>
+          <h1 id="client-detail-title"></h1>
+          <p class="detail-nickname" id="client-detail-subtitle"></p>
+        </div>
+      </header>
+      <main class="detail-content">
+        <div class="client-detail-body">
+          <div class="client-progress-wrap" id="client-progress-wrap"></div>
+          <div class="client-sessions-list" id="client-sessions-list"></div>
+          <p class="clients-empty" id="client-sessions-empty" hidden></p>
+          <button class="client-delete-btn" id="client-delete-btn" type="button">Slet klient</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Save Dialog Modal -->
+  <div class="save-dialog" id="save-dialog" hidden>
+    <div class="save-dialog-backdrop"></div>
+    <div class="save-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="save-dialog-title">
+      <h2 class="save-dialog-title" id="save-dialog-title">Gem analyse</h2>
+      <div class="save-dialog-tabs">
+        <button class="save-dialog-tab" type="button" data-save-tab="existing">Eksisterende klient</button>
+        <button class="save-dialog-tab" type="button" data-save-tab="new">Ny klient</button>
+      </div>
+      <div class="save-dialog-body">
+        <div class="save-dialog-field" data-mode-only="existing">
+          <label class="save-dialog-label" for="save-existing-client" id="save-label-existing">Vælg klient</label>
+          <select id="save-existing-client" class="save-dialog-input"></select>
+        </div>
+        <div class="save-dialog-field" data-mode-only="new">
+          <label class="save-dialog-label" for="save-new-client-id" id="save-label-clientid">Klient-kode</label>
+          <input id="save-new-client-id" class="save-dialog-input" type="text" maxlength="32" autocomplete="off" />
+          <p class="save-dialog-hint" id="save-hint-clientid">Brug en kode, ikke et navn (fx K01, JN-1234)</p>
+        </div>
+        <div class="save-dialog-field">
+          <label class="save-dialog-label" for="save-notes" id="save-label-notes">Notater (valgfri)</label>
+          <textarea id="save-notes" class="save-dialog-input save-dialog-textarea" rows="3" maxlength="500"></textarea>
+        </div>
+      </div>
+      <div class="save-dialog-actions">
+        <button class="save-dialog-btn save-dialog-cancel" type="button" data-save-cancel>Annuller</button>
+        <button class="save-dialog-btn save-dialog-commit" type="button" data-save-commit>Gem</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backup Dialog -->
+  <div class="backup-dialog" id="backup-dialog" hidden>
+    <div class="backup-dialog-backdrop" data-backup-cancel></div>
+    <div class="backup-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="backup-dialog-title">
+      <button class="backup-dialog-close" type="button" data-backup-cancel aria-label="Luk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2 class="backup-dialog-title" id="backup-dialog-title">Sikkerhedskopi af arkiv</h2>
+      <p class="backup-dialog-lead">Du kan gemme alle dine klient-forløb som en fil — eller hente en tidligere kopi tilbage. Filen ligger lokalt på din enhed, ikke i en sky.</p>
+      <div class="backup-dialog-actions">
+        <button class="clients-action-btn" id="export-archive-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span id="export-archive-label">Gem en kopi</span>
+        </button>
+        <button class="clients-action-btn" id="import-archive-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span id="import-archive-label">Hent en kopi tilbage</span>
+        </button>
+        <input type="file" id="import-file-input" accept="application/json,.json" hidden>
+      </div>
+      <p class="backup-dialog-hint">Filen ender i din Download-mappe. Hvis du skifter telefon eller computer, kan du flytte filen over og bruge "Hent en kopi tilbage".</p>
+    </div>
+  </div>
+
+  <!-- Save Toast -->
+  <div class="save-toast" id="save-toast">Gemt</div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <button class="bottom-nav-item active" data-nav="home">
+      <!-- Hjem: åndedrags-cirkel med lille hjerte-prik -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><circle cx="12" cy="12" r="9" opacity="0.5"/><circle cx="12" cy="12" r="5" opacity="0.7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="bottom-nav-item" data-nav="practice">
+      <!-- I Praksis: mini-nål + en bue (mini af hub-motiv) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><circle cx="12" cy="4" r="1.2" opacity="0.7"/><line x1="12" y1="5.5" x2="12" y2="14"/><circle cx="12" cy="14.8" r="1.4" fill="currentColor" stroke="none"/><path d="M5,19 Q12,16 19,19" opacity="0.55"/><path d="M3,22 Q12,17 21,22" opacity="0.35"/></svg>
+      <span>Practice</span>
+    </button>
+    <button class="bottom-nav-item" data-nav="organs">
+      <!-- 12 Organer: mini-kropskort med midterpunkter -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><circle cx="12" cy="6" r="2.2" opacity="0.55"/><path d="M8,10 Q12,11 16,10 L15,20 Q12,21.5 9,20 Z" opacity="0.45"/><circle cx="12" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+      <span>Organs</span>
+    </button>
+    <button class="bottom-nav-item" data-nav="elements">
+      <!-- Fem Elementer: pentagon-skelet med 5 prikker -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M12,3 L20,9 L17,19 L7,19 L4,9 Z" opacity="0.45"/><circle cx="12" cy="3" r="1.4" fill="currentColor" stroke="none"/><circle cx="20" cy="9" r="1.2" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="17" cy="19" r="1.2" fill="currentColor" stroke="none" opacity="0.7"/><circle cx="7" cy="19" r="1.2" fill="currentColor" stroke="none" opacity="0.6"/><circle cx="4" cy="9" r="1.2" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+      <span>Elements</span>
+    </button>
+    <button class="bottom-nav-item" data-nav="meridians">
+      <!-- 8 Meridianer: dobbelt-slynge omkring midterakse -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M8,3 Q14,8 8,12 Q2,16 8,21" opacity="0.7"/><path d="M16,3 Q10,8 16,12 Q22,16 16,21" opacity="0.5"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+      <span>Meridians</span>
+    </button>
+  </nav>
+
+  <!-- Top Floating Buttons -->
+  <button class="top-float-btn top-float-left" id="hamburger-btn" aria-label="Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  <button class="top-float-btn top-float-right" id="theme-toggle" aria-label="Skift mellem lyst og mørkt tema">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+  <button class="top-float-btn top-float-right-2" id="search-btn" aria-label="Søg">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <div class="search-input-row">
+        <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search organs, elements, meridians..." autocomplete="off" />
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results">
+        <div class="search-placeholder"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu Overlay -->
+  <div class="hamburger-overlay" id="hamburger-overlay">
+    <div class="hamburger-menu" id="hamburger-menu">
+      <div class="hamburger-header">
+        <button class="hamburger-close" id="hamburger-close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="hamburger-letterhead">
+          <div class="hamburger-brand">Metode Lone Sørensen</div>
+        </div>
+      </div>
+
+      <div class="hamburger-section">
+        <div class="hamburger-section-label" id="menu-label-sections">Sections</div>
+        <button class="hamburger-link" data-nav="home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.5"/><circle cx="12" cy="12" r="5" opacity="0.7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+          Home
+        </button>
+        <button class="hamburger-link" data-nav="practice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="4" r="1.2" opacity="0.7"/><line x1="12" y1="5.5" x2="12" y2="14"/><circle cx="12" cy="14.8" r="1.4" fill="currentColor" stroke="none"/><path d="M5,19 Q12,16 19,19" opacity="0.55"/><path d="M3,22 Q12,17 21,22" opacity="0.35"/></svg>
+          In Practice
+        </button>
+        <button class="hamburger-link" data-nav="organs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="6" r="2.2" opacity="0.55"/><path d="M8,10 Q12,11 16,10 L15,20 Q12,21.5 9,20 Z" opacity="0.45"/><circle cx="12" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+          The 12 Organs
+        </button>
+        <button class="hamburger-link" data-nav="elements">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><path d="M12,3 L20,9 L17,19 L7,19 L4,9 Z" opacity="0.45"/><circle cx="12" cy="3" r="1.4" fill="currentColor" stroke="none"/><circle cx="20" cy="9" r="1.2" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="17" cy="19" r="1.2" fill="currentColor" stroke="none" opacity="0.7"/><circle cx="7" cy="19" r="1.2" fill="currentColor" stroke="none" opacity="0.6"/><circle cx="4" cy="9" r="1.2" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+          Five Elements & Core Principles
+        </button>
+        <button class="hamburger-link" data-nav="meridians">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><path d="M8,3 Q14,8 8,12 Q2,16 8,21" opacity="0.7"/><path d="M16,3 Q10,8 16,12 Q22,16 16,21" opacity="0.5"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none" opacity="0.8"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none" opacity="0.7"/></svg>
+          The 8 Extraordinary Meridians
+        </button>
+        <button class="hamburger-link" data-nav="overviews">
+          <!-- Overblik: vifte af stråler -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"/><line x1="12" y1="19" x2="4" y2="14" opacity="0.45"/><line x1="12" y1="19" x2="7" y2="7" opacity="0.55"/><line x1="12" y1="19" x2="12" y2="4" opacity="0.7"/><line x1="12" y1="19" x2="17" y2="7" opacity="0.55"/><line x1="12" y1="19" x2="20" y2="14" opacity="0.45"/></svg>
+          Overviews
+        </button>
+        <button class="hamburger-link" data-nav="clients" id="menu-clients-link">
+          <!-- Mine klienter: stiliseret journal-mappe -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><path d="M4 6 L10 6 L11.5 8 L20 8 L20 19 L4 19 Z" opacity="0.6"/><line x1="7" y1="12" x2="17" y2="12" opacity="0.5"/><line x1="7" y1="15" x2="14" y2="15" opacity="0.5"/></svg>
+          Mine klienter
+        </button>
+      </div>
+
+      <div class="hamburger-section">
+        <div class="hamburger-section-label" id="menu-label-info">Information</div>
+        <button class="hamburger-link" data-info="about">
+          <!-- Om: cirkel med lodret prik-linje (informations-tegn) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.6"/><circle cx="12" cy="8.5" r="1" fill="currentColor" stroke="none"/><line x1="12" y1="12" x2="12" y2="16.5" opacity="0.7"/></svg>
+          Om appen
+        </button>
+        <button class="hamburger-link" data-info="howto">
+          <!-- Sådan bruger du appen: cirkel med spørgende bue -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.6"/><path d="M9.5,9.5 Q12,7 14.5,9.5 Q14.5,12 12,13 L12,14.5" opacity="0.75"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+          Sådan bruger du appen
+        </button>
+        <button class="hamburger-link" data-info="privacy">
+          <!-- Privatliv: skjold-form -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><path d="M12 3 L4 6 L4 12 Q4 18 12 21 Q20 18 20 12 L20 6 Z" opacity="0.6"/><path d="M9 12 L11 14 L15 10" opacity="0.8"/></svg>
+          Privatliv og data
+        </button>
+        <button class="hamburger-link" data-info="faq">
+          <!-- FAQ: cirkel med spørgsmålstegn -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.6"/><path d="M9.5 9.5 Q12 7 14.5 9.5 Q14.5 11.5 12 12.5 L12 14" opacity="0.85"/><circle cx="12" cy="16.5" r="0.9" fill="currentColor" stroke="none"/></svg>
+          Spørgsmål og svar
+        </button>
+        <button class="hamburger-link" data-info="backup">
+          <!-- Sikkerhedskopi: lille sky med pil -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" width="20" height="20"><path d="M6 16 Q3 16 3 13 Q3 10.5 5.5 10 Q5.5 6.5 9 6 Q12 6 13 8.5 Q15 8 16.5 9.5 Q18.5 9.5 19 11.5 Q21 11.8 21 14 Q21 16 18 16 Z" opacity="0.55"/><path d="M12 11 L12 18 M9 15 L12 18 L15 15" opacity="0.85"/></svg>
+          Sikkerhedskopi af arkiv
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=lone-1"></script>
+</body>
+</html>
