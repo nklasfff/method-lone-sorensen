@@ -10,6 +10,7 @@ import {
   extraordinaryMeridians,
   fiveElements,
   practiceGuide,
+  educationOverview,
   organOverviews,
   meridianOverviews,
   symptomReference,
@@ -17,7 +18,7 @@ import {
   conversationStructure,
   organClock,
   tcmFoundation
-} from './data-lone.js?v=6-articles';
+} from './data-lone.js?v=7-overview';
 
 const da = {
   APP_INFO,
@@ -26,6 +27,7 @@ const da = {
   extraordinaryMeridians,
   fiveElements,
   practiceGuide,
+  educationOverview,
   organOverviews,
   meridianOverviews,
   symptomReference,
