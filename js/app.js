@@ -618,23 +618,24 @@ let { organs, extraordinaryMeridians, organClock, fiveElements, tcmFoundation, s
 // ============================================
 // Theme Toggle
 // ============================================
+// Lys er default. Hvis kursisten har valgt mørk tidligere, sæt attributten.
 function initTheme() {
-  const saved = localStorage.getItem('tcm-theme');
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
+  const saved = localStorage.getItem('lone-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
   }
   updateThemeIcon();
 }
 
 function toggleTheme() {
   document.documentElement.setAttribute('data-theme-transitioning', '');
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  if (isLight) {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
     document.documentElement.removeAttribute('data-theme');
-    localStorage.setItem('tcm-theme', 'dark');
+    localStorage.setItem('lone-theme', 'light');
   } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('tcm-theme', 'light');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('lone-theme', 'dark');
   }
   updateThemeIcon();
   renderOrganClock();
@@ -643,11 +644,12 @@ function toggleTheme() {
 
 function updateThemeIcon() {
   const label = document.getElementById('theme-label');
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  if (label) label.textContent = isLight ? t('themeDarkMode') : t('themeLightMode');
-  const newInner = isLight
-    ? '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>'
-    : '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (label) label.textContent = isDark ? t('themeLightMode') : t('themeDarkMode');
+  // I mørk: vis sol (skift til lys). I lys: vis måne (skift til mørk).
+  const newInner = isDark
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
   document.querySelectorAll('#theme-toggle svg, [data-forward="theme-toggle"] svg').forEach(svg => {
     svg.innerHTML = newInner;
   });
@@ -1788,7 +1790,7 @@ function handleNavigation(navId) {
 // Hub Card Navigation
 // ============================================
 function setupHubCards() {
-  document.querySelectorAll('.hub-card[data-hub]').forEach(card => {
+  document.querySelectorAll('.hub-card[data-hub], .hub-row[data-hub]').forEach(card => {
     card.addEventListener('click', () => {
       const hub = card.dataset.hub;
       handleNavigation(hub);

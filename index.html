@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app">
@@ -24,152 +24,77 @@
          Home Screen — Hub
          ============================================ -->
     <div id="screen-home" class="screen active">
-      <div class="hero">
-        <!-- Hero-billede tilføjes senere. Tomt felt holder layoutet stabilt. -->
-      </div>
-
-      <div class="home-brand">
-        <div class="home-top-bar">
-          <button class="home-top-btn home-top-left" data-forward="hamburger-btn" aria-label="Menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+      <header class="home-topbar">
+        <button class="home-icon-btn" data-forward="hamburger-btn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+        <div class="home-icon-group">
+          <button class="home-icon-btn" data-forward="search-btn" aria-label="Søg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           </button>
-          <h1 class="home-brand-title">Metode Lone Sørensen</h1>
-          <div class="home-top-right">
-            <button class="home-top-btn" data-forward="search-btn" aria-label="Søg">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </button>
-            <button class="home-top-btn" data-forward="theme-toggle" aria-label="Skift mellem lyst og mørkt tema">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            </button>
-          </div>
+          <button class="home-icon-btn" data-forward="theme-toggle" aria-label="Skift mellem lyst og mørkt tema">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
         </div>
-        <p class="home-brand-subtitle">Opslagsværk for kursister</p>
+      </header>
+
+      <div class="hero-portrait">
+        <img src="hero.png" alt="Metode Lone Sørensen" />
       </div>
 
       <main class="home-hub">
-        <p class="home-intro">Et arbejdsrum mellem dine kurser — slå op, repetér, find sammenhænge.</p>
-
-        <div class="hub-grid">
-          <button class="hub-card" data-hub="practice">
-            <div class="hub-card-illustration">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- I Praksis: akupunktur-nål der åbner et felt -->
-                <circle cx="40" cy="14" r="2.2" stroke="rgba(var(--ink-soft), 0.60)" stroke-width="1" fill="none"/>
-                <line x1="40" y1="16" x2="40" y2="48" stroke="rgba(var(--ink-deep), 0.70)" stroke-width="1.2"/>
-                <circle cx="40" cy="50" r="2.4" fill="var(--accent-gold)" opacity="0.70" class="hub-anim"/>
-                <path d="M20,58 Q40,48 60,58" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1" class="hub-flow"/>
-                <path d="M14,64 Q40,50 66,64" stroke="rgba(var(--ink-soft), 0.28)" stroke-width="0.9" class="hub-flow" style="animation-delay:0.6s"/>
-                <path d="M10,70 Q40,52 70,70" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8" class="hub-flow" style="animation-delay:1.2s"/>
-              </svg>
-            </div>
-            <div class="hub-card-text">
-              <div class="hub-card-title">In Practice</div>
-              <div class="hub-card-desc">Guidance for dialogue and pattern discovery</div>
-            </div>
-            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-
-          <button class="hub-card" data-hub="organs">
-            <div class="hub-card-illustration">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- 12 Organer: kropskort med lysende punkter langs meridianen -->
-                <circle cx="40" cy="18" r="6" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1"/>
-                <path d="M28,32 Q40,34 52,32" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
-                <path d="M30,32 L28,64" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
-                <path d="M50,32 L52,64" stroke="rgba(var(--ink-soft), 0.40)" stroke-width="1"/>
-                <path d="M28,64 Q40,68 52,64" stroke="rgba(var(--ink-soft), 0.35)" stroke-width="1"/>
-                <line x1="28" y1="34" x2="18" y2="46" stroke="rgba(var(--ink-soft), 0.25)" stroke-width="0.9"/>
-                <line x1="52" y1="34" x2="62" y2="46" stroke="rgba(var(--ink-soft), 0.25)" stroke-width="0.9"/>
-                <circle cx="40" cy="38" r="1.5" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim"/>
-                <circle cx="40" cy="46" r="1.7" fill="var(--accent-gold)" opacity="0.65" class="hub-anim" style="animation-delay:0.8s"/>
-                <circle cx="40" cy="54" r="1.5" fill="rgba(var(--ink-glow), 0.65)" class="hub-anim" style="animation-delay:1.6s"/>
-                <circle cx="40" cy="62" r="1.3" fill="rgba(var(--ink-glow), 0.55)"/>
-              </svg>
-            </div>
-            <div class="hub-card-text">
-              <div class="hub-card-title">The 12 Organs</div>
-              <div class="hub-card-desc">Organ systems, meridians and the organ clock</div>
-            </div>
-            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-
-          <button class="hub-card" data-hub="elements">
-            <div class="hub-card-illustration">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Fem Elementer: fem unikke mikro-motiver arrangeret cirkulært -->
-                <circle cx="40" cy="40" r="24" stroke="rgba(var(--ink-soft), 0.18)" stroke-width="0.8"/>
-                <!-- Træ (top): gren med spire -->
-                <path d="M40,20 L40,10 M40,14 L36,11 M40,15 L44,12" stroke="var(--el-wood)" stroke-width="1.2" opacity="0.75" fill="none"/>
-                <!-- Ild (øverst højre): flamme -->
-                <path d="M58,22 Q60,25 59,28 Q62,25 63,28 Q61,30 59,30" stroke="var(--el-fire)" stroke-width="1.2" opacity="0.75" fill="none"/>
-                <!-- Jord (nederst højre): bjerg -->
-                <path d="M54,58 L59,52 L64,58" stroke="var(--el-earth)" stroke-width="1.2" opacity="0.75" fill="none"/>
-                <!-- Metal (nederst venstre): klokke/cirkel -->
-                <circle cx="21" cy="55" r="3" stroke="var(--el-metal)" stroke-width="1.2" opacity="0.75" fill="none"/>
-                <!-- Vand (øverst venstre): bølger -->
-                <path d="M14,24 Q18,22 22,24 Q26,26 30,24" stroke="var(--el-water)" stroke-width="1.2" opacity="0.75" fill="none"/>
-                <!-- Centralt hjerte -->
-                <circle cx="40" cy="40" r="2" fill="var(--accent-gold)" opacity="0.65" class="hub-anim"/>
-              </svg>
-            </div>
-            <div class="hub-card-text">
-              <div class="hub-card-title">Five Elements</div>
-              <div class="hub-card-desc">Wood, Fire, Earth, Metal, Water and core principles</div>
-            </div>
-            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-
-          <button class="hub-card" data-hub="meridians">
-            <div class="hub-card-illustration">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- 8 Ekstraordinære: dobbelt-helix med 8 krydspunkter -->
-                <path d="M26,12 Q46,24 26,40 Q6,56 26,68" stroke="rgba(var(--ink-deep), 0.65)" stroke-width="1.2"/>
-                <path d="M54,12 Q34,24 54,40 Q74,56 54,68" stroke="rgba(var(--ink-soft), 0.50)" stroke-width="1.1"/>
-                <line x1="40" y1="8" x2="40" y2="72" stroke="rgba(var(--ink-soft), 0.20)" stroke-width="0.8" stroke-dasharray="2 4"/>
-                <circle cx="40" cy="18" r="1.4" fill="rgba(var(--ink-glow), 0.65)"/>
-                <circle cx="40" cy="28" r="1.4" fill="rgba(var(--ink-soft), 0.55)"/>
-                <circle cx="40" cy="34" r="1.5" fill="var(--accent-gold)" opacity="0.65" class="hub-anim"/>
-                <circle cx="40" cy="40" r="1.4" fill="rgba(var(--ink-glow), 0.60)"/>
-                <circle cx="40" cy="46" r="1.5" fill="var(--accent-gold)" opacity="0.55" class="hub-anim" style="animation-delay:1.2s"/>
-                <circle cx="40" cy="52" r="1.4" fill="rgba(var(--ink-soft), 0.55)"/>
-                <circle cx="40" cy="58" r="1.4" fill="rgba(var(--ink-glow), 0.60)"/>
-                <circle cx="40" cy="64" r="1.4" fill="rgba(var(--ink-glow), 0.55)"/>
-              </svg>
-            </div>
-            <div class="hub-card-text">
-              <div class="hub-card-title">The 8 Extraordinary</div>
-              <div class="hub-card-desc">Deeper energy systems and meridians</div>
-            </div>
-            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-
-          <button class="hub-card" data-hub="overviews">
-            <div class="hub-card-illustration">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Overblik: vifte af perspektiver fra ét centrum -->
-                <circle cx="40" cy="60" r="2.2" fill="var(--accent-gold)" opacity="0.70"/>
-                <line x1="40" y1="60" x2="12" y2="48" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
-                <line x1="40" y1="60" x2="22" y2="26" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
-                <line x1="40" y1="60" x2="40" y2="14" stroke="rgba(var(--ink-deep), 0.60)" stroke-width="1.1"/>
-                <line x1="40" y1="60" x2="58" y2="26" stroke="rgba(var(--ink-soft), 0.55)" stroke-width="1"/>
-                <line x1="40" y1="60" x2="68" y2="48" stroke="rgba(var(--ink-soft), 0.45)" stroke-width="1"/>
-                <path d="M12,48 Q40,18 68,48" stroke="rgba(var(--ink-soft), 0.22)" stroke-width="0.8" stroke-dasharray="2 4"/>
-                <circle cx="21" cy="45" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim"/>
-                <circle cx="27" cy="32" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:0.6s"/>
-                <circle cx="40" cy="22" r="1.5" fill="rgba(var(--ink-glow), 0.70)" class="hub-anim" style="animation-delay:1.2s"/>
-                <circle cx="53" cy="32" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:1.8s"/>
-                <circle cx="59" cy="45" r="1.3" fill="rgba(var(--ink-glow), 0.60)" class="hub-anim" style="animation-delay:2.4s"/>
-              </svg>
-            </div>
-            <div class="hub-card-text">
-              <div class="hub-card-title">Overviews</div>
-              <div class="hub-card-desc">Quick reference for organs, symptoms and dialogue</div>
-            </div>
-            <svg class="hub-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+        <div class="home-intro-block">
+          <p class="home-eyebrow">Opslagsværk for kursister</p>
+          <h1 class="home-headline">Ansigtszoner <span class="home-headline-sep">|</span> Behandlings­teknikker <span class="home-headline-sep">|</span> Fokus­områder</h1>
+          <p class="home-lede">Et arbejdsrum mellem dine kurser — slå op, repetér, find sammenhænge.</p>
         </div>
+
+        <nav class="hub-list" aria-label="Hovedsektioner">
+          <button class="hub-row" data-hub="practice">
+            <span class="hub-row-num">01</span>
+            <span class="hub-row-body">
+              <span class="hub-row-title">I Praksis</span>
+              <span class="hub-row-desc">Klientmøde, samtale og forløb</span>
+            </span>
+            <span class="hub-row-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="hub-row" data-hub="organs">
+            <span class="hub-row-num">02</span>
+            <span class="hub-row-body">
+              <span class="hub-row-title">Ansigtszoner</span>
+              <span class="hub-row-desc">Refleksområder, neurologiske zoner og kort</span>
+            </span>
+            <span class="hub-row-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="hub-row" data-hub="elements">
+            <span class="hub-row-num">03</span>
+            <span class="hub-row-body">
+              <span class="hub-row-title">Fokusområder</span>
+              <span class="hub-row-desc">Hovedtemaer i metoden — neurologi, lymfe, hormon, trauma</span>
+            </span>
+            <span class="hub-row-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="hub-row" data-hub="meridians">
+            <span class="hub-row-num">04</span>
+            <span class="hub-row-body">
+              <span class="hub-row-title">Behandlingsteknikker</span>
+              <span class="hub-row-desc">Greb, sekvenser og specialiserede protokoller</span>
+            </span>
+            <span class="hub-row-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="hub-row" data-hub="overviews">
+            <span class="hub-row-num">05</span>
+            <span class="hub-row-body">
+              <span class="hub-row-title">Oversigter</span>
+              <span class="hub-row-desc">Hurtige opslag på tværs af zoner, teknikker og symptomer</span>
+            </span>
+            <span class="hub-row-arrow" aria-hidden="true">→</span>
+          </button>
+        </nav>
       </main>
 
     </div>
