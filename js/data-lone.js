@@ -661,12 +661,128 @@ export const extraordinaryMeridians = [
 ];
 
 // ============================================
+// Symptom-reference til mønster-analysen
+// Hvert symptom mapper til de kirtler der typisk er involveret.
+// Bruges af motoren til at beregne hvilke kirtler der træder frem.
+// ============================================
+export const symptomReference = [
+  // Energi & stress
+  { symptom: 'Vedvarende træthed', organs: ['Hypothalamus', 'Hypofysen', 'Skjoldbruskkirtlen', 'Binyrerne'] },
+  { symptom: 'Mental udmattelse', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Manglende fokus', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Vedvarende uro', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Kronisk stress', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Wired-but-tired (træt men kan ikke slappe af)', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Morgen-træthed', organs: ['Binyrerne', 'Hypothalamus', 'Pinealkirtlen'] },
+  { symptom: 'Eftermiddags-energidyk', organs: ['Bugspytkirtlen', 'Binyrerne'] },
+
+  // Søvn & døgnrytme
+  { symptom: 'Indsovningsbesvær', organs: ['Pinealkirtlen', 'Hypothalamus'] },
+  { symptom: 'Fragmenteret søvn', organs: ['Pinealkirtlen', 'Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Søvnløshed med rastløshed', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Forskudt døgnrytme', organs: ['Pinealkirtlen', 'Hypothalamus'] },
+  { symptom: 'Skifteholds-symptomer', organs: ['Pinealkirtlen', 'Hypothalamus'] },
+  { symptom: 'Aften-vågenhed', organs: ['Pinealkirtlen', 'Binyrerne'] },
+
+  // Hormonel balance
+  { symptom: 'Cyklus-uregelmæssighed', organs: ['Reproduktive kirtler', 'Hypofysen', 'Hypothalamus'] },
+  { symptom: 'PMS', organs: ['Reproduktive kirtler', 'Hypofysen'] },
+  { symptom: 'Fertilitetsbekymring', organs: ['Reproduktive kirtler', 'Hypofysen', 'Hypothalamus'] },
+  { symptom: 'Overgangsalder-symptomer', organs: ['Reproduktive kirtler', 'Hypothalamus'] },
+  { symptom: 'Hedeture', organs: ['Hypothalamus', 'Reproduktive kirtler'] },
+  { symptom: 'Reduceret libido', organs: ['Reproduktive kirtler', 'Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Uforklarlig vægtændring', organs: ['Skjoldbruskkirtlen', 'Bugspytkirtlen', 'Hypothalamus'] },
+  { symptom: 'Temperaturreguleringsproblemer', organs: ['Skjoldbruskkirtlen', 'Hypothalamus'] },
+
+  // Tarm-hjerne-aksen
+  { symptom: 'Fordøjelsesproblemer', organs: ['Hypothalamus', 'Bugspytkirtlen'] },
+  { symptom: 'Oppustethed', organs: ['Bugspytkirtlen'] },
+  { symptom: 'Sukker-cravings', organs: ['Bugspytkirtlen', 'Binyrerne'] },
+  { symptom: 'Ustabilt blodsukker', organs: ['Bugspytkirtlen', 'Binyrerne'] },
+  { symptom: 'Irritabel tarm', organs: ['Hypothalamus', 'Bugspytkirtlen'] },
+
+  // Emotionel regulering
+  { symptom: 'Angst', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Emotionel ustabilitet', organs: ['Hypothalamus', 'Binyrerne', 'Reproduktive kirtler'] },
+  { symptom: 'Hyperarousal', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Følelsesmæssig flad-hed', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Trauma-respons', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Irritabilitet', organs: ['Hypothalamus', 'Bugspytkirtlen'] },
+
+  // Krop & smerte
+  { symptom: 'Hovedpine', organs: ['Hypothalamus', 'Hypofysen'] },
+  { symptom: 'Migræne', organs: ['Hypothalamus', 'Pinealkirtlen', 'Reproduktive kirtler'] },
+  { symptom: 'Nakke-skulder-spændinger', organs: ['Binyrerne', 'Hypothalamus'] },
+  { symptom: 'Kæbespændinger', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Hjertebanken', organs: ['Hypothalamus', 'Binyrerne', 'Skjoldbruskkirtlen'] },
+
+  // Sanser & vagus
+  { symptom: 'Tinnitus', organs: ['Hypothalamus', 'Binyrerne'] },
+  { symptom: 'Svimmelhed', organs: ['Hypothalamus'] },
+  { symptom: 'Synkebesvær', organs: ['Hypothalamus', 'Skjoldbruskkirtlen'] },
+  { symptom: 'Stemmeforandring', organs: ['Skjoldbruskkirtlen'] }
+];
+
+// ============================================
+// Mønster-bibliotek — typiske ubalance-mønstre i metoden
+// ============================================
+export const patternLibrary = [
+  {
+    name: 'Stress-binyre-mønstret',
+    description: 'Vedvarende sympatisk aktivering hvor hypothalamus og binyrerne ikke kan slippe alarmtilstanden. Klienten oplever ofte træthed og uro samtidig — kroppen er udmattet men kan ikke roe ned.',
+    keySymptoms: ['Kronisk stress', 'Wired-but-tired (træt men kan ikke slappe af)', 'Søvnløshed med rastløshed', 'Vedvarende træthed'],
+    supportingSymptoms: ['Hjertebanken', 'Sukker-cravings', 'Irritabilitet', 'Nakke-skulder-spændinger'],
+    focus: ['Hypothalamus', 'Binyrerne']
+  },
+  {
+    name: 'Hypothalamus-akse-svigt',
+    description: 'Når masterkirtlen ikke sender de rette signaler ned, viser det sig som flere perifere ubalancer på én gang. Behandling af enkelt-kirtler rækker ikke — start ovenfra.',
+    keySymptoms: ['Vedvarende træthed', 'Uforklarlig vægtændring', 'Temperaturreguleringsproblemer', 'Cyklus-uregelmæssighed'],
+    supportingSymptoms: ['Mental udmattelse', 'Manglende fokus', 'Hovedpine'],
+    focus: ['Hypothalamus', 'Hypofysen']
+  },
+  {
+    name: 'Pineal-rytme-svigt',
+    description: 'Døgnrytmen er kommet ud af synk. Pinealkirtlen og hypothalamus kan ikke etablere stabil søvn-vågen-cyklus. Ofte forstærket af stress eller skifteholdsarbejde.',
+    keySymptoms: ['Indsovningsbesvær', 'Fragmenteret søvn', 'Forskudt døgnrytme', 'Aften-vågenhed'],
+    supportingSymptoms: ['Migræne', 'Mental udmattelse', 'Skifteholds-symptomer'],
+    focus: ['Pinealkirtlen', 'Hypothalamus']
+  },
+  {
+    name: 'Hormonel reproduktiv ubalance',
+    description: 'Reproduktive kirtler kan ikke fungere uden de rette signaler ovenfra. Cyklus-symptomer, PMS og fertilitet er sjældent isoleret problem — masterkirtlerne skal med.',
+    keySymptoms: ['Cyklus-uregelmæssighed', 'PMS', 'Fertilitetsbekymring', 'Overgangsalder-symptomer'],
+    supportingSymptoms: ['Hedeture', 'Reduceret libido', 'Emotionel ustabilitet'],
+    focus: ['Reproduktive kirtler', 'Hypofysen', 'Hypothalamus']
+  },
+  {
+    name: 'Tarm-hjerne-aksen forstyrret',
+    description: 'Vagusnerven og bugspytkirtlen kommunikerer ikke optimalt. Symptombilledet er en blanding af fordøjelse, energi og stemning. Colonlink hører til kerneprotokollen.',
+    keySymptoms: ['Fordøjelsesproblemer', 'Sukker-cravings', 'Ustabilt blodsukker', 'Irritabel tarm'],
+    supportingSymptoms: ['Eftermiddags-energidyk', 'Emotionel ustabilitet', 'Oppustethed'],
+    focus: ['Bugspytkirtlen', 'Hypothalamus']
+  },
+  {
+    name: 'Vagus-svigt',
+    description: 'Den autonome regulering er aflåst i sympatisk tone. Vagusnerven kan ikke skabe ro. Ses ofte ved trauma og kronisk stress, og giver symptomer på tværs af systemer.',
+    keySymptoms: ['Tinnitus', 'Hjertebanken', 'Hyperarousal', 'Trauma-respons'],
+    supportingSymptoms: ['Søvnløshed med rastløshed', 'Fordøjelsesproblemer', 'Angst', 'Svimmelhed'],
+    focus: ['Hypothalamus', 'Binyrerne']
+  },
+  {
+    name: 'Skjoldbrusk-akse',
+    description: 'Stofskifte-relaterede symptomer der ikke afhjælpes selvom blodprøver er normale. Pegende mod den centrale signalering frem for kirtlen selv.',
+    keySymptoms: ['Vedvarende træthed', 'Uforklarlig vægtændring', 'Temperaturreguleringsproblemer'],
+    supportingSymptoms: ['Hjertebanken', 'Synkebesvær', 'Stemmeforandring'],
+    focus: ['Skjoldbruskkirtlen', 'Hypothalamus', 'Hypofysen']
+  }
+];
+
+// ============================================
 // Tomme felter — motoren forventer dem
 // ============================================
 export const organOverviews = [];
 export const meridianOverviews = [];
-export const symptomReference = [];
-export const patternLibrary = [];
 export const conversationStructure = { title: '', subtitle: '', sections: [] };
 export const organClock = [];
 export const tcmFoundation = {

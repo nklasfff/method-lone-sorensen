@@ -1796,12 +1796,16 @@ function setupHubCards() {
   document.querySelectorAll('.hub-card[data-hub], .hub-row[data-hub]').forEach(card => {
     card.addEventListener('click', () => {
       const hub = card.dataset.hub;
+      if (!hub) return;
       handleNavigation(hub);
       if (window._updateBottomNav) {
         window._updateBottomNav(hub === 'overviews' ? 'home' : hub);
       }
     });
   });
+  // Mønster-analyse på track-skærmen
+  const saBtn = document.getElementById('track-symptom-analysis-btn');
+  if (saBtn) saBtn.addEventListener('click', () => showSymptomAnalysis());
 }
 
 // ============================================
@@ -2403,46 +2407,42 @@ const PV_MAX = 9;
 const PV_MIN = 3;
 let pvSelected = new Set();
 
+// Symptom-domæner tilpasset Lones univers — endokrin og neurologisk ramme.
 const SA_DOMAINS = [
   {
-    id: 'vitalitet',
-    title: 'Energi & Vitalitet',
-    symptoms: ['Træthed/energimangel', 'Hyppige forkølelser', 'Hårtab eller for tidlig grånen']
+    id: 'energi-stress',
+    title: 'Energi & stress',
+    symptoms: ['Vedvarende træthed', 'Mental udmattelse', 'Manglende fokus', 'Vedvarende uro', 'Kronisk stress', 'Wired-but-tired (træt men kan ikke slappe af)', 'Morgen-træthed', 'Eftermiddags-energidyk']
   },
   {
-    id: 'soevn-affekt',
-    title: 'Søvn & Affekt',
-    symptoms: ['Søvnproblemer', 'Emotionel ustabilitet', 'Angst og frygt', 'Hjertebanken', 'Vedvarende sorg/melankoli', 'Kronisk irritabilitet/vrede', 'Udtalt søvnighed i dagtimerne', 'Søvnløshed med rastløshed', 'Trykkende brystsmerte med indre angst']
+    id: 'soevn-rytme',
+    title: 'Søvn & døgnrytme',
+    symptoms: ['Indsovningsbesvær', 'Fragmenteret søvn', 'Søvnløshed med rastløshed', 'Forskudt døgnrytme', 'Skifteholds-symptomer', 'Aften-vågenhed']
   },
   {
-    id: 'fordoejelse',
-    title: 'Fordøjelse',
-    symptoms: ['Fordøjelsesproblemer', 'Oppustethed efter måltider', 'Forstoppelse med tørre afføringer', 'Morgendiarré kl. 5-7']
+    id: 'hormon',
+    title: 'Hormonel balance',
+    symptoms: ['Cyklus-uregelmæssighed', 'PMS', 'Fertilitetsbekymring', 'Overgangsalder-symptomer', 'Hedeture', 'Reduceret libido', 'Uforklarlig vægtændring', 'Temperaturreguleringsproblemer']
   },
   {
-    id: 'termo',
-    title: 'Termoregulation & Sved',
-    symptoms: ['Kolde hænder og fødder', 'Hedeture', 'Natlige svedudbrud', 'Spontan svedtendens i dagtimerne', 'Skiftevis kulde- og hedefornemmelser']
+    id: 'tarm-hjerne',
+    title: 'Tarm-hjerne-aksen',
+    symptoms: ['Fordøjelsesproblemer', 'Oppustethed', 'Sukker-cravings', 'Ustabilt blodsukker', 'Irritabel tarm']
   },
   {
-    id: 'slim-vaesker',
-    title: 'Slim, Sinus & Væsker',
-    symptoms: ['Overdreven slim/opspyt', 'Kronisk næsetilstopning', 'Sæsonbaseret rhinitis/allergi', 'Ødem/væskeretention', 'Tør mund med lyst til småslurke']
+    id: 'emotionel',
+    title: 'Emotionel regulering',
+    symptoms: ['Angst', 'Emotionel ustabilitet', 'Hyperarousal', 'Følelsesmæssig flad-hed', 'Trauma-respons', 'Irritabilitet']
   },
   {
-    id: 'hoved-sanser',
-    title: 'Hoved & Sanser',
-    symptoms: ['Hovedpine', 'Svimmelhed', 'Øjenproblemer', 'Høreproblemer/tinnitus', 'Tab af lugte- eller smagssans']
+    id: 'krop-smerte',
+    title: 'Krop & smerte',
+    symptoms: ['Hovedpine', 'Migræne', 'Nakke-skulder-spændinger', 'Kæbespændinger', 'Hjertebanken']
   },
   {
-    id: 'krop-hud',
-    title: 'Krop, Lemmer & Vejrtrækning',
-    symptoms: ['Rygsmerter', 'Smerter i ekstremiteter', 'Hudproblemer', 'Vejrtrækningsproblemer', 'Klump i halsen (globus)', 'Tunghed og svaghed i benene', 'Kramper indersiden af benene', 'Ensidig iskias på ydersiden af benet', 'Ledsmerter med følelsesløshed og prikken', 'Smerter langs kroppens side']
-  },
-  {
-    id: 'reproduktiv',
-    title: 'Reproduktiv & Urogenital',
-    symptoms: ['Menstruationsproblemer', 'Reduceret libido', 'Hyppig vandladning om natten', 'Vedvarende vaginalt udflåd']
+    id: 'sanser',
+    title: 'Sanser & vagus',
+    symptoms: ['Tinnitus', 'Svimmelhed', 'Synkebesvær', 'Stemmeforandring']
   }
 ];
 
