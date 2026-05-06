@@ -1765,6 +1765,9 @@ function handleNavigation(navId) {
     case 'home':
       showScreen('home');
       break;
+    case 'track-ansigtszone':
+      showScreen('track-ansigtszone');
+      break;
     case 'practice':
       showScreen('section-practice');
       break;
