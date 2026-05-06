@@ -998,89 +998,196 @@ p {
   background: var(--border-medium);
 }
 
-/* === Track Overview — Overblik / 8 Temaer / Nøglepunkter === */
+/* === Track Overview — Overblik / 8 Temaer / Nøglepunkter ===
+   Et arbejdsrum, ikke en præsentation. Typografi-drevet, klinisk-præcist.
+   ============================================ */
+
+/* --- Header --- */
+.track-overview-header {
+  padding-bottom: 24px;
+}
+
 .track-overview-header .detail-title-area {
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 0;
 }
 
 .track-overview-header .detail-title-area h1 {
+  font-family: var(--font-sans);
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .track-overview-eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0;
+  color: var(--accent-warm);
+  margin: 0 0 4px;
 }
 
 .track-overview-lede {
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin: 4px 0 0;
-  max-width: 56ch;
+  margin: 6px 0 0;
+  max-width: 58ch;
+}
+
+/* --- Tabs: lidt mere prominente på denne skærm --- */
+#screen-track-overview .detail-tabs {
+  padding: 0 var(--space-5);
+  gap: var(--space-2);
+}
+
+#screen-track-overview .detail-tabs .tab {
+  padding: 14px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  flex: 1;
+  text-align: center;
+}
+
+#screen-track-overview .detail-tabs .tab.active {
+  font-weight: 600;
+}
+
+/* --- Overblik-fane: nummererede prosa-sektioner --- */
+.track-overview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 62ch;
 }
 
 .track-ov-section {
-  padding: 22px 0 4px;
-  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  padding-top: 8px;
 }
 
-.track-ov-section:last-child {
-  border-bottom: none;
+.track-ov-section + .track-ov-section {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 28px;
+}
+
+.track-ov-num {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--accent-warm);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
 }
 
 .track-ov-heading {
-  font-size: 1.0625rem;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.005em;
+  line-height: 1.3;
   color: var(--text-primary);
   margin: 0 0 12px;
 }
 
 .track-ov-paragraph {
   font-size: 0.9375rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--text-secondary);
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
 .track-ov-paragraph:last-child {
-  margin-bottom: 18px;
+  margin-bottom: 0;
 }
 
-/* Subtitle på et tema (vises under titlen i akkordeon-headeren) */
+/* --- Temaer-fane --- */
+#track-overview-themes {
+  max-width: 62ch;
+}
+
 .theme-subtitle {
   display: block;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
   margin-top: 3px;
-  letter-spacing: 0;
+  text-transform: none;
 }
 
-/* Lead-paragraph i tema-body (over spørgsmålene) */
 .theme-lead {
-  padding: 0 16px 4px;
+  padding: 4px 16px 0;
   font-size: 13.5px;
   line-height: 1.6;
   color: var(--text-secondary);
   font-style: italic;
-  margin: 12px 0 4px;
+  margin: 14px 0 6px;
+  border-left: 2px solid var(--accent-warm-soft);
+  margin-left: 16px;
+  padding-left: 12px;
 }
 
-/* Større max-height så lead + 4 spørgsmål kan vises uden klipning */
 #track-overview-themes .theme-item.open .theme-body {
-  max-height: 900px;
+  max-height: 1100px;
+}
+
+/* --- Nøglepunkter-fane: kort i grid --- */
+#track-overview-keypoints {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+#track-overview-keypoints .keypoint {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md, 10px);
+  padding: 18px 18px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+#track-overview-keypoints .keypoint::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-warm);
+  opacity: 0.5;
+}
+
+#track-overview-keypoints .keypoint-title {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+#track-overview-keypoints .keypoint-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  #track-overview-keypoints {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* === Skjul TCM-rest visuelt === */

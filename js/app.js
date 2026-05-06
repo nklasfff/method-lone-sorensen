@@ -1,5 +1,5 @@
 // The Patterns Behind — App Logic v2
-import { getLangData } from './data.js?v=lone-1';
+import { getLangData } from './data.js?v=lone-2';
 import { polyvagalIntro, polyvagalStates, polyvagalSymptoms, polyvagalPatterns } from './data-pv.js?v=1';
 
 // ============================================
@@ -1632,8 +1632,9 @@ function showTrackOverview() {
 
   const body = document.getElementById('track-overview-body');
   if (body && ov.overview) {
-    body.innerHTML = ov.overview.map(section => `
+    body.innerHTML = ov.overview.map((section, i) => `
       <section class="track-ov-section">
+        <span class="track-ov-num">${String(i + 1).padStart(2, '0')}</span>
         <h2 class="track-ov-heading">${section.heading}</h2>
         ${section.paragraphs.map(p => `<p class="track-ov-paragraph">${p}</p>`).join('')}
       </section>
